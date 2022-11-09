@@ -3,9 +3,9 @@ import { notesService } from '../services/note.service.js'
 
 export default {
   template: `
-        <section class="note-list">
+        <section class="main-layout">
             <h1>Notes Index</h1>
-            <ul>
+            <ul class="notes-list flex">
                 <li class="flex" v-for="note in notes" :key="note.id">
                     <note-preview :note="note"/>
                     <section class="actions">
@@ -18,7 +18,7 @@ export default {
     `,
   data() {
     return {
-      notes:null,
+      notes: [],
       selectedNote: null,
       filterBy: {},
     }
@@ -28,7 +28,9 @@ export default {
       this.$emit('remove', noteId)
     },
     getNotes() {
-      notesService.query().then((notes) => (this.notes = notes))
+      notesService.query().then((notes) => {
+        console.log(notes), (this.notes = notes)
+      })
     },
   },
   created() {
