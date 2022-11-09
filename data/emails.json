@@ -1,0 +1,38 @@
+[
+    {
+        "id": "e101",
+        "subject": "Miss you!",
+        "body": "Would love to catch up sometimes",
+        "isRead": false,
+        "sentAt" : 1551133930594,
+        "from": "momo@momo.com",
+        "to": "user@appsus.com"
+        },
+    {
+        "id": "e102",
+        "subject": "Miss you not!",
+        "body": "Who are you and how did you get my email?",
+        "isRead": true,
+        "sentAt" : 1551133932594,
+        "to": "lili@momo.com",
+        "from": "user@appsus.com"
+        },
+    {
+        "id": "e103",
+        "subject": "What?!",
+        "body": "I guess this is a wrong address. sincere apologies",
+        "isRead": true,
+        "sentAt" : 1551133936594,
+        "from": "user@appsus.com",
+        "to": "lili@momo.com"
+        },
+    {
+        "id": "e104",
+        "subject": "Do you want this ranfom item?",
+        "body": "WE've been spying on you for a while, and think you might want to purchase this random item",
+        "isRead": false,
+        "sentAt" : 1551133936594,
+        "from": "user@appsus.com",
+        "to": "lili@momo.com"
+        }
+]

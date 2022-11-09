@@ -1,5 +1,7 @@
 import { utilService } from '../../../services/util.service.js'
 import { storageService } from '../../../services/async-storage.service.js'
+import gMails from '../../../data/emails.json' assert {type: 'json'}
+
 
 const Mail_KEY = 'mailDB'
 _createMails()
@@ -50,12 +52,12 @@ function getNextMailId(mailId) {
 function _createMails() {
     let mails = utilService.loadFromStorage(Mail_KEY)
     if (!mails || !mails.length) {
-        mails = []
-        mails.push(_createMail('a.hoffman.lon@gmail.com', 'checking', "will this work? who knows"))
-        mails.push(_createMail('b.rivka.lon@gmail.com', 'Yes', "ofc it will"))
-        mails.push(_createMail('c.asdcasdasf.lon@gmail.com', 'checking', "will this work? who knows"))
-        mails.push(_createMail('d.DSDSD.lon@gmail.com', 'Yo', "will this work? who knows"))
-        mails.push(_createMail('d.sdfsdfs.lon@gmail.com', 'checking', "will this work? who knows"))
+        mails = gMails
+        // mails.push(_createMail('a.hoffman.lon@gmail.com', 'checking', "will this work? who knows"))
+        // mails.push(_createMail('b.rivka.lon@gmail.com', 'Yes', "ofc it will"))
+        // mails.push(_createMail('c.asdcasdasf.lon@gmail.com', 'checking', "will this work? who knows"))
+        // mails.push(_createMail('d.DSDSD.lon@gmail.com', 'Yo', "will this work? who knows"))
+        // mails.push(_createMail('d.sdfsdfs.lon@gmail.com', 'checking', "will this work? who knows"))
 
         utilService.saveToStorage(Mail_KEY, mails)
     }
