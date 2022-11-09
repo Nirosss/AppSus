@@ -14,6 +14,7 @@
 @import "cmps/app-header.css";
 @import "cmps/user-msg.css";
 @import "cmps/card.css";
+@import "cmps/mail.css";
 
 /* Apps */
 @import "apps/mail/mail-app.css";

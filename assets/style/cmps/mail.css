@@ -1,0 +1,14 @@
+.from-container {
+  min-width: 168px;
+  max-width: 168px;
+  overflow: hidden;
+}
+
+.from {
+  font-weight: 900;
+  color: black;
+}
+
+.opened {
+  background-color: aquamarine;
+}
