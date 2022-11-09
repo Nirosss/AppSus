@@ -6,6 +6,7 @@
         "isRead": false,
         "sentAt" : 1551133930594,
         "from": "momo@momo.com",
+        "name": "Momo",
         "to": "user@appsus.com"
         },
     {
@@ -15,6 +16,7 @@
         "isRead": true,
         "sentAt" : 1551133932594,
         "to": "lili@momo.com",
+        "name": "Me",
         "from": "user@appsus.com"
         },
     {
@@ -24,6 +26,7 @@
         "isRead": true,
         "sentAt" : 1551133936594,
         "from": "user@appsus.com",
+        "name": "Me",
         "to": "lili@momo.com"
         },
     {
@@ -32,7 +35,8 @@
         "body": "WE've been spying on you for a while, and think you might want to purchase this random item",
         "isRead": false,
         "sentAt" : 1551133936594,
-        "from": "user@appsus.com",
-        "to": "lili@momo.com"
+        "to": "user@appsus.com",
+        "name": "Lili",
+        "from": "lili@momo.com"
         }
 ]

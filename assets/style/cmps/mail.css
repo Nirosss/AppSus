@@ -1,3 +1,20 @@
+.mail-list {
+  table-layout: auto;
+  width: 100%;
+}
+
+.mail-preview {
+  white-space: nowrap;
+  height: 20px;
+  /* background-color: var(--primary-clr-200); */
+  border-bottom: 1px solid var(--primary-clr-500);
+  width: 100%;
+  color: black;
+}
+
+.mail-preview:hover {
+  border-bottom: 2px solid var(--primary-clr-500);
+}
 .from-container {
   min-width: 168px;
   max-width: 168px;
@@ -5,10 +22,25 @@
 }
 
 .from {
-  font-weight: 900;
-  color: black;
 }
 
 .opened {
-  background-color: aquamarine;
+  background-color: var(--primary-clr-200);
+  color: unset;
+}
+
+.time {
+  justify-self: end;
+  width: 200px;
+}
+
+.first-col {
+  position: relative;
+  width: 10em;
+  left: 0;
+}
+.last-col {
+  position: relative;
+  width: 10em;
+  right: 0;
 }
