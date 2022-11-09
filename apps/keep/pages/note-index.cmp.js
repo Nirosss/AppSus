@@ -6,7 +6,7 @@ export default {
         <section class="main-layout">
             <h1>Notes Index</h1>
             <ul class="notes-list flex">
-                <li class="flex" v-for="note in notes" :key="note.id">
+                <li class="flex card" v-for="note in notes" :key="note.id">
                     <note-preview :note="note"/>
                     <section class="actions">
                         <router-link :to="'/notes/' + note.id">Details</router-link> |
