@@ -1,19 +1,11 @@
-import notePreview from '../cmps/note-preview.cmp.js'
 import { notesService } from '../services/note.service.js'
+import noteList from '../cmps/note-list.cmp.js'
 
 export default {
   template: `
         <section class="main-layout">
-            <h1>Notes Index</h1>
-            <ul class="notes-list flex">
-                <li class="flex card" v-for="note in notes" :key="note.id">
-                    <note-preview :note="note"/>
-                    <section class="actions">
-                        <router-link :to="'/notes/' + note.id">Details</router-link> |
-                        <button @click="remove(note.id)">x</button>
-                    </section>
-                </li>
-            </ul>
+          <h1>Notes Index</h1>
+          <note-list :notes="notesToShow" @remove="remove(noteId)"/>  
         </section>
     `,
   data() {
@@ -36,11 +28,21 @@ export default {
         console.log(notes), (this.notes = notes)
       })
     },
+    filter(filterBy) {
+      this.filterBy = filterBy
+    },
+  },
+  computed: {
+    notesToShow() {
+      // const regex = new RegExp(this.filterBy.title, 'i')
+      // return this.notes.filter((note) => regex.test(note.info))
+      return this.notes
+    },
   },
   created() {
     this.getNotes()
   },
   components: {
-    notePreview,
+    noteList,
   },
 }
