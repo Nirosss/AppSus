@@ -4,7 +4,6 @@ header {
 }
 
 .logo {
-  font-family: eurofurence;
   font-size: 40px;
   color: var(--primary-clr-800);
   margin: 0;
