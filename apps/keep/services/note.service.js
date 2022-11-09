@@ -37,7 +37,7 @@ function getEmptyNote() {
 }
 
 function _createNotes() {
-  let notes = storageService.query(NOTES_KEY)
+  let notes = utilService.loadFromStorage(NOTES_KEY)
   if (!notes || !notes.length) {
     notes = [
       {
@@ -64,7 +64,8 @@ function _createNotes() {
         },
       },
     ]
-    storageService.post(NOTES_KEY, notes)
+    utilService.saveToStorage(NOTES_KEY, notes)
   }
+  console.log(notes)
   return notes
 }

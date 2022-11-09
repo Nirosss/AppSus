@@ -1,7 +1,7 @@
 export default {
   props: ['note'],
   template: `
-        <section class="note-preview">
+        <section class="note-preview flex">
             <h2>{{ note.type }}</h2>
             <!-- <img :src="imgUrl" alt=""> -->
             <h3>{{ note.info }}</h3>
