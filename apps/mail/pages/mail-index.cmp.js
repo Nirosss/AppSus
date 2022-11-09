@@ -9,7 +9,7 @@ export default {
   name: 'mail-index',
   template: `
     <section class="mail-app">
-        <mail-filter @filter="setFilter"/>
+        <!-- <mail-filter @filter="setFilter"/> -->
         <router-link to="/mail/edit">Add a mail</router-link>
         <mail-list 
             @remove="removeMail" 
@@ -51,15 +51,16 @@ export default {
   },
   computed: {
     mailsToShow() {
-      const regex = new RegExp(this.filterBy.vendor, 'i')
-      var mails = this.mails.filter(mail => regex.test(mail.vendor))
-      mails = mails.filter(mail => mail.maxSpeed > this.filterBy.minSpeed)
-      return mails
+      // const regex = new RegExp(this.filterBy.vendor, 'i')
+      // var mails = this.mails.filter(mail => regex.test(mail.vendor))
+      // mails = mails.filter(mail => mail.maxSpeed > this.filterBy.minSpeed)
+      // return mails
+      return this.mails
 
     }
   },
   components: {
-    mailFilter,
+    // mailFilter,
     mailList,
   }
 }
