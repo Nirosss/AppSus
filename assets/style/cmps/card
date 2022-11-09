@@ -1,0 +1,24 @@
+.card {
+  width: 250px;
+  height: 370px;
+  box-shadow: 5px 5px 20px hsl(210, 3%, 46%);
+  margin: 30px;
+  transition: 0.3s ease;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.card img {
+  /* width: 170px; */
+  height: 200px;
+}
+
+.card a {
+  color: black;
+  text-decoration: none;
+}
