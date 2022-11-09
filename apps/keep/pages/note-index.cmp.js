@@ -25,7 +25,11 @@ export default {
   },
   methods: {
     remove(noteId) {
-      this.$emit('remove', noteId)
+      notesService.remove(noteId).then(() => {
+        const idx = this.notes.findIndex((note) => note.id === noteId)
+        this.notes.splice(idx, 1)
+      })
+      // this.$emit('remove', noteId)
     },
     getNotes() {
       notesService.query().then((notes) => {
