@@ -1,0 +1,85 @@
+/* MOILE ONLY */
+@media (max-width: 640px) {
+    header {
+        position: fixed;
+        width: 100%;
+        box-shadow: none;
+        z-index: 1;
+    }
+
+    .main-header .nav-bar {
+        position: absolute;
+        bottom: 0;
+        transform: translateY(100%);
+        width: 100%;
+        left: 0;
+        flex-direction: column;
+        max-height: 0;
+        overflow: hidden;
+        justify-content: flex-end;
+
+        transition: max-height .6s;
+    }
+
+    body.menu-open .main-header .nav-bar {
+        max-height: 100vh;
+    }
+
+    .main-header .nav-bar a {
+        width: 100%;
+    }
+}
+
+/* SMALL */
+@media (min-width: 640px) {
+    .main-layout {
+        max-width: 600px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .btn-toggle-menu {
+        display: none;
+    }
+}
+
+/* Medium */
+@media (min-width: 880px) {
+    .main-layout {
+        max-width: 840px;
+    }
+
+    .card {
+        flex-direction: row;
+        padding-inline-end: 1.625em;
+    }
+
+    .card .card-img {
+        align-self: flex-start;
+        flex-basis: 50%;
+    }
+
+    .card .card-info {
+        flex-basis: 50%;
+    }
+
+    html {
+        font-size: 14px;
+    }
+}
+
+/* LARGE */
+@media (min-width: 1020px) {
+    html {
+        font-size: 16px;
+    }
+
+    .main-layout {
+        max-width: 980px;
+    }
+
+    .main-header .nav-bar a {
+        height: 130px;
+        width: 130px;
+    }
+}

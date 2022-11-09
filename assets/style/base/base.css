@@ -2,8 +2,19 @@
   box-sizing: border-box;
 }
 
+:root {
+  --primary-clr-100: rgb(255, 255, 255);
+  --primary-clr-200: rgb(248, 248, 248);
+  --primary-clr-300: rgb(240, 240, 240);
+  --primary-clr-500: rgb(155, 155, 155);
+  --primary-clr-600: rgb(96, 96, 96);
+  --primary-clr-800: rgb(41, 41, 41);
+  --primary-clr-900: rgb(0, 0, 0);
+
+  --secondary-clr-500: rgb(88, 201, 58);
+}
+
 html {
-  
 }
 
 body {
@@ -18,7 +29,7 @@ h4,
 h5,
 h6 {
   margin: 0 0 1em;
-  font-family: 'Edu VIC WA NT Beginner', cursive;
+  font-family: "Edu VIC WA NT Beginner", cursive;
 }
 
 p {
@@ -30,14 +41,12 @@ a {
   color: unset;
 }
 
-
-
 /* Dont stretch my Media */
 img,
 embed,
 video,
 object {
-  max-width: 100%
+  max-width: 100%;
 }
 
 /* tap targets: */
@@ -49,6 +58,5 @@ button {
 
 /* Simple and useful CSS Debugging Technique */
 .debug * {
-  outline: 1px solid gold
+  outline: 1px solid gold;
 }
-

@@ -1,18 +1,19 @@
 /* Setup */
-@import 'setup/vars.css';
-@import 'setup/typography.css';
+@import "setup/vars.css";
+@import "setup/typography.css";
 
 /* Base */
-@import 'base/base.css';
-@import 'base/helpers.css';
-@import 'base/layout.css';
-@import 'base/forms.css';
+@import "base/base.css";
+@import "base/helpers.css";
+@import "base/layout.css";
+@import "base/forms.css";
+@import "base/mq.css";
 
 /* General Components */
-@import 'cmps/home-page.css';
-@import 'cmps/app-header.css';
-@import 'cmps/user-msg.css';
+@import "cmps/home-page.css";
+@import "cmps/app-header.css";
+@import "cmps/user-msg.css";
 
 /* Apps */
-@import 'apps/mail/mail-app.css';
-@import 'apps/note/note-app.css';
+@import "apps/mail/mail-app.css";
+@import "apps/note/note-app.css";

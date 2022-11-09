@@ -1,12 +1,43 @@
-.app-header {
-  background-color: var(--clr5);
-  color: var(--secondary-clr1);
-  padding: 1em;
+header {
+  background-color: var(--primary-clr-800);
+  box-shadow: inset 0px -6px 0 var(--primary-clr-900);
 }
 
-@media(max-width: 720px) {
-  .app-header {
-    background-color: var(--clr3);
-    color: var(--secondary-clr2);
-  }
+.logo {
+  font-family: eurofurence;
+  font-size: 40px;
+  color: var(--primary-clr-800);
+  margin: 0;
+}
+
+.main-header .logo {
+  color: var(--primary-clr-100);
+}
+
+.main-header .nav-bar a {
+  height: 100px;
+  width: 100px;
+  color: var(--primary-clr-100);
+  cursor: pointer;
+
+  transition: box-shadow 0.4s;
+}
+
+.main-header .nav-bar a:hover {
+  color: var(--secondary-clr-500);
+  box-shadow: inset 0px -6px 0 var(--secondary-clr-500);
+}
+
+.main-header .nav-bar a.active {
+  color: var(--secondary-clr-500);
+  box-shadow: inset 0px -6px 0 var(--secondary-clr-500);
+  cursor: default;
+}
+
+.main-header .nav-bar > *:first-child {
+  border-inline-start: 1px solid var(--primary-clr-900);
+}
+.main-header .nav-bar > * {
+  border-inline-end: 1px solid var(--primary-clr-900);
+  background-color: var(--primary-clr-800);
 }
