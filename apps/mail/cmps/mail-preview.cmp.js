@@ -23,7 +23,8 @@ export default {
             if (Date.now() - this.mail.sentAt < 1000 * 60 * 60 * 24) {
                 const date = new Date(this.mail.sentAt);
                 const hour = date.getHours()
-                const minute = date.getMinutes()
+                let minute = date.getMinutes()
+                minute = (minute + '').padStart(2, '0')
                 return `${hour}:${minute}`
             }
             var options = { day: "numeric", month: "short" };

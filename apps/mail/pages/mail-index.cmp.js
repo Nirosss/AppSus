@@ -1,17 +1,14 @@
 import { mailService } from '../services/mail.service.js'
 import { eventBus } from "../../../services/event-bus.service.js"
 
-
-
-
-// import mailFilter from '../cmps/mail-filter.cmp.js'
+import mailFilter from '../cmps/mail-filter.cmp.js'
 import mailList from '../cmps/mail-list.cmp.js'
 
 export default {
   name: 'mail-index',
   template: `
     <section class="mail-app">
-        <!-- <mail-filter @filter="setFilter"/> -->
+        <mail-filter @filter="setFilter"/>
         <router-link to="/mail/edit">Add a mail</router-link>
         <mail-list 
             @remove="removeMail" 
@@ -57,16 +54,14 @@ export default {
   },
   computed: {
     mailsToShow() {
-      // const regex = new RegExp(this.filterBy.vendor, 'i')
-      // var mails = this.mails.filter(mail => regex.test(mail.vendor))
-      // mails = mails.filter(mail => mail.maxSpeed > this.filterBy.minSpeed)
-      // return mails
-      return this.mails
+      const regex = new RegExp(this.filterBy.name, 'i')
+      var mails = this.mails.filter(mail => regex.test(mail.name))
+      return mails
 
     }
   },
   components: {
-    // mailFilter,
+    mailFilter,
     mailList,
   }
 }

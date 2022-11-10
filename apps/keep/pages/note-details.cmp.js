@@ -8,7 +8,7 @@ import { eventBus, removeNote, showUserMsg } from "../../../services/event-bus.s
 export default {
   template: `<section v-if="note" class=" note-details">
     <img :src="imgUrl" alt="">
-    <h1 class="subject-container">{{note.info.txt}}</h1>
+    <input type="textarea" v-model="note.info.txt" @change="save()">
 
     <ul class="todos">
         <li v-for="(todo,idx) in note.info.todos" @click="toggleToDo(idx)"
@@ -58,6 +58,9 @@ export default {
     },
   },
   methods: {
+    save() {
+      notesService.save(this.note)
+    },
     remove() {
       removeNote(this.id)
       showUserMsg({ txt: "note deleted" })

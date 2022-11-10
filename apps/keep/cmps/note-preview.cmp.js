@@ -129,7 +129,6 @@ export default {
       removeNote(noteId)
     },
     save() {
-      console.log(this.currNote.info.url)
       notesService.save(this.currNote)
     },
     unFocus() {
