@@ -58,18 +58,30 @@ const notetodos = {
 export default {
   props: ['note'],
   template: `
-        <section class="note-preview">
+        <section  @mouseover="upHere = true" @mouseleave="upHere = false" class="note-preview">
+        <section class="note-content">  
             <component :is="getType" :note="note"></component>
         </section>
+        <section v-bind:class="showButtons" class="actions-buttons flex justify-between">
+                        <router-link :to="'/notes/' + note.id" ><button style="background-image: url('../../../../assets/img/buttons/add20x20.png')" title="Edit"></button></router-link>
+                        <button style="background-image: url('../../../../assets/img/buttons/pallete16x16.png')" title="Add to do list"></button>
+                        <button style="background-image: url('../../../../assets/img/buttons/uploadimg16x16.png')" title="Add ann image"></button>
+                        <button style="background-image: url('../../../../assets/img/buttons/trash16x16.png')" @click="remove(note.id)"></button>
+        </section>
+</section>
     `,
   data() {
     return {
+      upHere: false,
       currNote: this.note,
       noteType: this.getType,
       pageCmps: ['notetxt', 'noteimg'],
     }
   },
   computed: {
+    showButtons(){
+      return {invisible : !this.upHere}
+    },
     getType() {
       return this.note.type.replace('-', '')
     },

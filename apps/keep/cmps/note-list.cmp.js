@@ -6,14 +6,11 @@ export default {
                 <div class="notes-list clean-list">
                     <div class="card flex" v-for="note in notes" :key="note.id">
                         <note-preview :note="note"/>
-                        <section class="actions">
-                        <router-link :to="'/notes/' + note.id">Details</router-link> |
-                        <span @click="remove(note.id)">x</span>
-                        </section>
                     </div>
                 </div>
             </section> `,
-  methods: {
+ 
+ methods: {
     remove(noteId) {
       this.$emit('remove', noteId)
     },
