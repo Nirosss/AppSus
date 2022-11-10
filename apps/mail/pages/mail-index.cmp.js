@@ -28,7 +28,7 @@ export default {
     }
   },
   created() {
-    eventBus.on('removeMailFromREnder', this.removeFromList)
+    eventBus.on('removeMail', this.removeMail)
     mailService.query()
       .then(mails => {
         this.mails = mails
@@ -40,11 +40,11 @@ export default {
         .then(() => {
           const idx = this.mails.findIndex(mail => mail.id === mailId)
           this.mails.splice(idx, 1)
-          // showSuccessMsg(`Mail ${mailId} deleted`)
+
         })
         .catch(err => {
           console.log('OOPS', err)
-          // showErrorMsg('Cannot remove mail')
+
         })
 
     },

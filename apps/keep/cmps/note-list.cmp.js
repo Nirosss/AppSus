@@ -4,13 +4,13 @@ export default {
   props: ['notes'],
   template: `<section className="notes">
                 <div class="notes-list clean-list">
-                    <div class="card flex" v-for="note in notes" :key="note.id">
+                    <div  v-for="note in notes" :key="note.id">
                         <note-preview :note="note"/>
                     </div>
                 </div>
             </section> `,
- 
- methods: {
+
+  methods: {
     remove(noteId) {
       this.$emit('remove', noteId)
     },

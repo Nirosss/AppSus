@@ -33,12 +33,11 @@ export function showErrorMsg(txt) {
     showUserMsg({ txt, type: 'error' })
 }
 
-export function removeMailFromREnder(id) {
-    removeMailFromREnder(id)
+export function removeMail(id) {
+    eventBus.emit('removeMail', id)
+
 }
 
-export function removeNote(id){
-    eventBus.emit('removeNote',id)
-    
-    
+export function removeNote(id) {
+    eventBus.emit('removeNote', id)
 }

@@ -1,5 +1,5 @@
 import { mailService } from '../services/mail.service.js'
-import { eventBus, removeMailFromREnder } from "../../../services/event-bus.service.js"
+import { eventBus, removeMail, showUserMsg } from "../../../services/event-bus.service.js"
 
 
 
@@ -30,22 +30,23 @@ export default {
   </section>`,
   data() {
     return {
-      mail: null
+      mail: null,
+      id: null
     }
   },
   created() {
     const { id } = this.$route.params
+    this.id = id
     mailService.get(id)
       .then(mail => {
         this.mail = mail
-        removeMailFromREnder(id)
       })
   },
   methods: {
     remove() {
-      mailService.remove(this.mail.id).then(
-        this.$router.go(-1)
-      )
+      removeMail(this.id)
+      showUserMsg({ txt: "mail deleted" })
+      this.$router.go(-1)
     }
   }
 }
