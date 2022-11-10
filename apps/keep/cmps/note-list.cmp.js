@@ -2,7 +2,7 @@ import notePreview from './note-preview.cmp.js'
 
 export default {
   props: ['notes'],
-  template: `<section className="  debug  notes">
+  template: `<section className="notes">
                 <div class="notes-list clean-list">
                     <div class="card flex" v-for="note in notes" :key="note.id">
                         <note-preview :note="note"/>

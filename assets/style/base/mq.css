@@ -49,10 +49,10 @@
         max-width: 840px;
     }
 
-    .card {
+    /* .card {
         flex-direction: row;
-        padding-inline-end: 1.625em;
-    }
+        
+    } */
 
     .card .card-img {
         align-self: flex-start;

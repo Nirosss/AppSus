@@ -1,19 +1,19 @@
 const notetxt = {
+  props:['note'],
   template: `
-    <section class="notetxt">
-      <h1>this is text note</h1>
-      <p>{{ note }}</p>
+      <section class="notetxt">
+      <p>{{ note.info.txt }}</p>
     </section>
     `,
  
 }
 
 const noteimg = {
+  props: ['note'],
   template: `
     <section class="note-img">
-        <h1>This is img note</h1>
-        <h2>{{ info }}</h2>
-        <img src="imgUrl" alt="">
+      <img :src="imgUrl" alt="">
+      <h2>{{ note.info.title }}</h2>
     </section>
     `,
   methods: {},
@@ -28,7 +28,7 @@ export default {
   props: ['note'],
   template: `
         <section class="note-preview flex">
-            <component :is="getType"></component>
+            <component :is="getType" :note="note"></component>
         </section>
     `,
   data() {
@@ -42,6 +42,9 @@ export default {
     getType() {
       console.log(this.note)
       return this.note.type.replace('-', '')
+    },
+    imgUrl() {
+      return this.note.info.url
     },
   },
   components: {
