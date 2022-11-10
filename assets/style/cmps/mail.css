@@ -1,5 +1,7 @@
 .mail-list {
   margin-top: 100px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .mail-preview {
@@ -111,7 +113,7 @@
 @media (min-width: 640px) {
   .mail-preview {
     display: grid;
-    grid-template-columns: 60px 168px 1fr 50px;
+    grid-template-columns: 40px 168px 1fr 50px;
     grid-template-areas: "marks-container name-container subject-body changeable-container";
     justify-content: start;
     font-size: 14px;
@@ -120,9 +122,15 @@
   .subject-body {
     display: flex;
   }
-  /* .subject-body::after {
-    content: "-";
-  } */
+  .changeable-container {
+    text-align: start;
+  }
+}
+
+.mail-edit {
+  position: relative;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .mail-edit header {
@@ -139,13 +147,21 @@
   margin-left: 5px;
   margin-right: 5px;
   border: none;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid var(--primary-clr-200);
 }
 
 .mail-edit textarea {
   height: 25em;
   width: 100%;
   width: 95%;
+  outline: none;
+  border: none;
+}
+
+.mail-edit button {
+  position: absolute;
+  bottom: 10%;
+  z-index: 10;
 }
 
 textarea:focus,

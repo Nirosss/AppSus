@@ -35,11 +35,6 @@
   .btn-toggle-menu {
     display: none;
   }
-  #app > section {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-  }
 }
 
 /* Medium */

@@ -26,6 +26,12 @@ body {
   color: var(--clr4);
 }
 
+#app > section {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
 h1,
 h2,
 h3,
