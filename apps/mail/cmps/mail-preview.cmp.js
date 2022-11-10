@@ -2,9 +2,8 @@
 export default {
     props: ['mail'],
     template: `
-          <!-- <section class="mail-preview flex main-layout clickable" v-bind:class="mailStyle" > -->
           <section 
-          class="mail-preview main-layout clickable" v-bind:class="mailStyle" >
+          class="mail-preview clickable" v-bind:class="mailStyle" >
            <div class="marks-container">⭐✡️</div>
               <div class="name-container">{{ mail.name }} </div>
 
