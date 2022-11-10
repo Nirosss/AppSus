@@ -1,13 +1,16 @@
-.notes-list{
+.notes{
     min-width: 0;
     width: 100%;
     /* column-count: 6 ; */
     margin-left: 90px;
     margin-right: 90px;
+    
+}
+.notes-list{
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    justify-content: start;    
+    justify-content: start;   
 }
 
 .note-preview{
