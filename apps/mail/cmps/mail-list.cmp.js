@@ -3,7 +3,7 @@ import mailPreview from './mail-preview.cmp.js'
 export default {
     props: ['mails'],
     template: `
-        <section class="mail-list main-layout">
+        <section class="mail-list">
             <ul class="clean-list">
                 <li v-for="mail in mails" :key="mail.id">
                 <router-link :to="'/mail/' + mail.id">

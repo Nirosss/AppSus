@@ -3,7 +3,7 @@ import { mailService } from '../services/mail.service.js'
 
 
 export default {
-  template: `<section v-if="mail" class="main-layout mail-details">
+  template: `<section v-if="mail" class=" mail-details">
     <h1 class="subject-container">{{mail.subject}}</h1>
 
       <div class="buttons-container">

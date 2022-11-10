@@ -3,7 +3,7 @@ import noteList from '../cmps/note-list.cmp.js'
 
 export default {
   template: `
-        <section class="main-layout">
+        <section >
           <note-list :notes="notesToShow" @remove="remove"/>  
         </section>
     `,
@@ -16,7 +16,7 @@ export default {
   },
   methods: {
     remove(noteId) {
-        notesService.remove(noteId).then(() => {
+      notesService.remove(noteId).then(() => {
         const idx = this.notes.findIndex((note) => note.id === noteId)
         this.notes.splice(idx, 1)
       })
