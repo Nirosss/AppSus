@@ -1,5 +1,7 @@
 import { mailService } from '../services/mail.service.js'
-// import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service.js' wrong path
+import { eventBus } from "../../../services/event-bus.service.js"
+
+
 
 
 // import mailFilter from '../cmps/mail-filter.cmp.js'
@@ -26,6 +28,7 @@ export default {
     }
   },
   created() {
+    eventBus.on('removeMailFromREnder', this.removeFromList)
     mailService.query()
       .then(mails => {
         this.mails = mails
@@ -47,6 +50,9 @@ export default {
     },
     setFilter(filterBy) {
       this.filterBy = filterBy
+    },
+    removeFromList(id) {
+      console.log(id)
     }
   },
   computed: {

@@ -1,5 +1,6 @@
 import { mailService } from '../services/mail.service.js'
-import { eventBus, showErrorMsg, showSuccessMsg, removeMailFromREnder } from "../../../services/event-bus.service.js"
+import { eventBus, removeMailFromREnder } from "../../../services/event-bus.service.js"
+
 
 
 
