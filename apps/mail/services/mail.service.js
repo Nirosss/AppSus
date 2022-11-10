@@ -6,6 +6,12 @@ import gMails from '../../../data/emails.json' assert {type: 'json'}
 const Mail_KEY = 'mailDB'
 _createMails()
 
+const loggedinUser = {
+    email: 'user@appsus.com',
+    fullname: 'Mahatma Appsus'
+}
+
+
 export const mailService = {
     query,
     get,
@@ -31,6 +37,9 @@ function save(mail) {
     if (mail.id) {
         return storageService.put(Mail_KEY, mail)
     } else {
+        mail.from = loggedinUser.email
+        mail.name = "Me"
+        mail.sentAt = Date.now()
         return storageService.post(Mail_KEY, mail)
     }
 }

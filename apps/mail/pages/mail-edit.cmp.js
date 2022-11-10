@@ -1,12 +1,12 @@
 import { mailService } from "../services/mail.service.js"
-import { eventBus, showErrorMsg, showSuccessMsg } from "../services/event-bus.service.js"
+import { eventBus, showErrorMsg, showSuccessMsg } from "../../../services/event-bus.service.js"
 
 export default {
     template: `
         <section class="mail-edit">
-            <h1>Mail Edit</h1>
+           <header class="flex"><span>New Message</span><span>X</span> </header>
             <form @submit.prevent="save">
-                <input ref="vendor" type="text" v-model="mailToEdit.vendor">
+                <input ref="to" type="text" v-model="mailToEdit.to" class="flex">
                 <input type="number" v-model.number="mailToEdit.maxSpeed">
                 <button>Save</button>
             </form>
@@ -25,12 +25,13 @@ export default {
         }
     },
     mounted() {
-        this.$refs.vendor.focus()
+        this.$refs.to.focus()
     },
     methods: {
         save() {
             mailService.save(this.mailToEdit)
                 .then(mail => {
+                    debugger
                     showSuccessMsg(`Mail saved (Mail id: ${mail.id})`)
                     this.$router.push('/mail')
                 })
