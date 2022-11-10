@@ -64,9 +64,10 @@ export default {
         </section>
         <section v-bind:class="showButtons" class="actions-buttons flex justify-between">
                         <router-link :to="'/notes/' + note.id" ><button style="background-image: url('../../../../assets/img/buttons/add20x20.png')" title="Edit"></button></router-link>
-                        <button style="background-image: url('../../../../assets/img/buttons/pallete16x16.png')" title="Add to do list"></button>
-                        <button style="background-image: url('../../../../assets/img/buttons/uploadimg16x16.png')" title="Add ann image"></button>
-                        <button style="background-image: url('../../../../assets/img/buttons/trash16x16.png')" @click="remove(note.id)"></button>
+                        <button style="background-image: url('../../../../assets/img/buttons/todo20x20.png')" title="Add to do list"></button>
+                        <button style="background-image: url('../../../../assets/img/buttons/pallete20x20.png')" title="Choose color"></button>
+                        <button style="background-image: url('../../../../assets/img/buttons/uploadimg20x20.png')" title="Add ann image"></button>
+                        <button style="background-image: url('../../../../assets/img/buttons/trash20x20.png')" @click="remove(note.id)"></button>
         </section>
 </section>
     `,

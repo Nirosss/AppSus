@@ -24,10 +24,20 @@
   visibility: hidden;
 }
 
+.actions-buttons{
+    margin-inline-start: 1.5rem;
+    margin-inline-end: 1.5rem;
+}
+
 .actions-buttons button {
   all: unset;
   transition: 0.3s ease;
-  height: 1rem;
-  width: 1rem;
+  height: 20px;
+  width: 20px;
+  background-repeat: no-repeat;
   background-position: center;
+}
+
+.actions-buttons button > img{
+    width: 100%;
 }
