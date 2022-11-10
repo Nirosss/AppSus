@@ -1,9 +1,7 @@
 export default {
   template: `
-       
-
-       <header>
-      <div class="main-header flex justify-between align-center">
+    <header>
+      <div class="main-header main-layout flex justify-between align-center">
         <section class="logo-container flex align-center">
           <img src="../assets/img/logo100x100.png" alt="logo">
            <h2 class="logo">
@@ -18,13 +16,9 @@ export default {
           Mail
         </router-link></li>
           <li>
-            <a href="#" class="flex justify-center align-center">About</router-link>
+            <router-link :to="'/about'" class="flex justify-center align-center">About</router-link>
           </li>
         </ul>
-    `,
-  created() {
-    console.log('app-heder')
-  },
+      </div>
+    </header>`,
 }
-
-
