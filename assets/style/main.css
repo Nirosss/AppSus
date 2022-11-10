@@ -12,6 +12,7 @@
 /* General Components */
 @import "cmps/home-page.css";
 @import "cmps/app-header.css";
+@import "cmps/footer.css";
 @import "cmps/user-msg.css";
 @import "cmps/card.css";
 @import "cmps/mail.css";

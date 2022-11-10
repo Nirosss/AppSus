@@ -6,8 +6,9 @@ export default {
         <section class="mail-edit">
            <header class="flex"><span>New Message</span><span>X</span> </header>
             <form @submit.prevent="save">
-                <input ref="to" type="text" v-model="mailToEdit.to" class="flex">
-                <input type="number" v-model.number="mailToEdit.maxSpeed">
+                <input ref="to" type="text" v-model="mailToEdit.to" class="to">
+                <input ref="to" type="text" v-model="mailToEdit.subject" class="flex">
+                <textarea  ref="to" type="text-area" v-model="mailToEdit.body" class="flex">
                 <button>Save</button>
             </form>
         </section>

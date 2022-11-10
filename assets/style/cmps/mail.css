@@ -125,9 +125,30 @@
   } */
 }
 
+.mail-edit header {
+  margin: 0;
+}
+
+.to::after {
+  content: "--";
+}
+
 .mail-edit input {
   width: 100%;
   padding: 0;
+  margin-left: 5px;
+  margin-right: 5px;
   border: none;
   border-bottom: 1px solid grey;
+}
+
+.mail-edit textarea {
+  height: 25em;
+  width: 100%;
+  width: 95%;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
 }

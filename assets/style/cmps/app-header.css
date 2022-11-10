@@ -1,7 +1,8 @@
 header {
   background-color: var(--primary-clr-800);
-  box-shadow: inset 0px -6px 0 var(--primary-clr-900);
+  /* box-shadow: inset 0px -6px 0 var(--primary-clr-900); */
   margin-bottom: 20px;
+  width: 100%;
 }
 
 .logo {
