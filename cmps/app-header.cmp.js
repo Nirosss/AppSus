@@ -1,7 +1,7 @@
 export default {
   template: `
     <header>
-      <div class="main-header main-layout flex justify-between align-center">
+      <div class="main-header flex justify-between align-center">
         <section class="logo-container flex align-center">
           <img src="../assets/img/logo100x100.png" alt="logo">
            <h2 class="logo">
