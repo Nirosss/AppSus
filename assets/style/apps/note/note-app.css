@@ -10,10 +10,15 @@
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    justify-content: start;   
+    align-items: start;  
 }
 
 .note-preview{
     flex-direction: column;
     justify-content: space-between;
+}
+
+.note-todos{
+    text-align: left;
+    
 }

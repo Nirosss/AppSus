@@ -1,11 +1,10 @@
 const notetxt = {
-  props:['note'],
+  props: ['note'],
   template: `
       <section class="note-txt">
       <h3>{{ note.info.txt }}</h3>
     </section>
     `,
- 
 }
 
 const noteimg = {
@@ -29,7 +28,7 @@ const notetodos = {
   template: `
     <section class="note-todos">
       <h2>{{ note.info.lable }}</h2>
-      <ul class="todos clean-list">
+      <ul class="todos">
         <li v-for="(todo,idx) in note.info.todos">{{todo.txt}} Done: {{this.doneAtDate(idx)}}</li>
       </ul>
     </section>
@@ -44,27 +43,22 @@ const notetodos = {
       console.log(note)
       return 'this.note.info.todos'
     },
-        
   },
   methods: {
-      doneAtDate(idx) {
+    doneAtDate(idx) {
       let doneAt = this.note.info.todos[idx].doneAt
-      if(doneAt){
+      if (doneAt) {
         let date = new Date(doneAt)
-        console.log(date)
         return date.toDateString().slice(4, 10)
       }
-      }
+    },
+  },
 }
-}
-
-
-
 
 export default {
   props: ['note'],
   template: `
-        <section class="note-preview flex">
+        <section class="note-preview">
             <component :is="getType" :note="note"></component>
         </section>
     `,
