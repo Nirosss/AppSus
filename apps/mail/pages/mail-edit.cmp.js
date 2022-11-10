@@ -6,10 +6,10 @@ export default {
         <section class="mail-edit">
            <header class="flex"><span>New Message</span><span>X</span> </header>
             <form @submit.prevent="save">
-                <input ref="to" type="text" v-model="mailToEdit.to" class="to">
-                <input ref="to" type="text" v-model="mailToEdit.subject" class="flex">
-                <textarea  ref="to" type="text-area" v-model="mailToEdit.body" class="flex">
-                <button>Save</button>
+                <input ref="to" type="text" v-model="mailToEdit.to" class="to"/>
+                <input  type="text" v-model="mailToEdit.subject" class="flex"/>
+                <textarea  type="text-area" v-model="mailToEdit.body" class="center"></textarea>
+                <button>Send</button>
             </form>
         </section>
     `,
@@ -32,7 +32,6 @@ export default {
         save() {
             mailService.save(this.mailToEdit)
                 .then(mail => {
-                    debugger
                     showSuccessMsg(`Mail saved (Mail id: ${mail.id})`)
                     this.$router.push('/mail')
                 })
