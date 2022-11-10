@@ -5,7 +5,7 @@
 
 .mail-preview {
   white-space: nowrap;
-  height: 20px;
+  /* height: 20px; */
   /* background-color: var(--primary-clr-200); */
   border-bottom: 1px solid var(--primary-clr-500);
   width: 100%;
@@ -20,9 +20,6 @@
   max-width: 168px;
   overflow: hidden;
 } */
-
-.from {
-}
 
 .opened {
   background-color: var(--primary-clr-200);
@@ -83,8 +80,11 @@
 
 .mail-preview {
   display: grid;
-  grid-template-columns: 60px 168px 1fr 50px;
-  grid-template-areas: "marks-container name-container subject-body changeable-container";
+  /* grid-template-columns: 60px 168px 1fr 50px; */
+  grid-template-areas:
+    "name-container . changeable-container"
+    "subject-body subject-body ."
+    "subject-body subject-body marks-container";
   justify-content: start;
   font-size: 14px;
   /* position: relative; */
@@ -99,7 +99,7 @@
   /* width: 168px; */
 }
 .subject-body {
-  /* width: 1fr; */
+  display: block;
   grid-area: subject-body;
   overflow: hidden;
 }
