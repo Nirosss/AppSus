@@ -9,12 +9,6 @@ export default {
                 <router-link :to="'/mail/' + mail.id">
                     <mail-preview :mail="mail"/>
                     </router-link>
-                   
-                        <!-- <router-link :to="'/mail/' + mail.id">Details</router-link> | -->
-                        <!-- <router-link :to="'/mail/edit/' + mail.id">Edit</router-link> | -->
-                        <!-- <button @click="remove(mail.id)">x</button> -->
-                  
-            <!-- </ul> -->
 </section>
     `,
     methods: {

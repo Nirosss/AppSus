@@ -82,28 +82,29 @@
 }
 
 .mail-preview {
-  /* display: grid;
+  display: grid;
   grid-template-areas: "marks-container name-container subject-body changeable-container";
-  justify-content: start; */
-  display: flex;
-  position: relative;
+  justify-content: start;
+  font-size: 14px;
+  /* position: relative; */
 }
 
 .marks-container {
-  /* grid-area: marks-container; */
+  grid-area: marks-container;
   width: 60px;
 }
 .name-container {
-  /* grid-area: name-container; */
+  grid-area: name-container;
   width: 168px;
 }
 .subject-body {
-  /* grid-area: subject-body; */
+  grid-area: subject-body;
   overflow: hidden;
 }
 .changeable-container {
-  /* grid-area: changeable-container; */
+  grid-area: changeable-container;
   width: 50px;
-  position: absolute;
-  right: 0;
+  justify-self: stretch;
+  /* position: absolute; */
+  /* right: 0; */
 }

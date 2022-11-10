@@ -21,6 +21,7 @@ export default {
     },
     computed: {
         time() {
+            console.log("time")
             if (Date.now() - this.mail.sentAt < 1000 * 60 * 60 * 24) {
                 const date = new Date(this.mail.sentAt);
                 return date.toLocaleTimeString()

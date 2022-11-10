@@ -13,12 +13,12 @@ export default {
           <ul class="nav-bar flex clean-list">
           <li><router-link :to="'/notes'" class="flex justify-center align-center">
           Notes
-        </a></li>
+        </router-link></li>
           <li><router-link :to="'/mail'" class="flex justify-center align-center">
           Mail
-        </a></li>
+        </router-link></li>
           <li>
-            <a href="#" class="flex justify-center align-center">About</a>
+            <a href="#" class="flex justify-center align-center">About</router-link>
           </li>
         </ul>
     `,
