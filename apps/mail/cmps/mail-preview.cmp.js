@@ -7,7 +7,9 @@ export default {
            <div class="marks-container">⭐✡️</div>
               <div class="name-container">{{ mail.name }} </div>
 
-          <div class="subject-body">{{ mail.subject }}- &nbsp   {{ mail.body }}</div>      
+          <div class="subject-body"> <div>{{ mail.subject }} &nbsp </div> <div> {{ mail.body }}
+          </div>
+          </div>      
              
 
             <div class="changeable-container">{{time}}</div>

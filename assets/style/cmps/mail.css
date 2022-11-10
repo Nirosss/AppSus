@@ -1,7 +1,6 @@
-/* .mail-list {
-  table-layout: auto;
-  width: 100%;
-} */
+.mail-list {
+  margin-top: 100px;
+}
 
 .mail-preview {
   white-space: nowrap;
@@ -80,7 +79,7 @@
 
 .mail-preview {
   display: grid;
-  /* grid-template-columns: 60px 168px 1fr 50px; */
+  grid-template-columns: 1fr 1fr 50px;
   grid-template-areas:
     "name-container . changeable-container"
     "subject-body subject-body ."
@@ -92,18 +91,36 @@
 
 .marks-container {
   grid-area: marks-container;
-  /* width: 60px; */
+  text-align: end;
 }
 .name-container {
   grid-area: name-container;
   /* width: 168px; */
 }
 .subject-body {
-  display: block;
   grid-area: subject-body;
+  white-space: nowrap;
   overflow: hidden;
+  text-overflow: ellipsis;
 }
 .changeable-container {
   grid-area: changeable-container;
   text-align: end;
+}
+
+@media (min-width: 640px) {
+  .mail-preview {
+    display: grid;
+    grid-template-columns: 60px 168px 1fr 50px;
+    grid-template-areas: "marks-container name-container subject-body changeable-container";
+    justify-content: start;
+    font-size: 14px;
+    /* position: relative; */
+  }
+  .subject-body {
+    display: flex;
+  }
+  /* .subject-body::after {
+    content: "-";
+  } */
 }
