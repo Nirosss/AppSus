@@ -86,12 +86,14 @@ function _createNotes() {
       {
         id: 'n105',
         type: 'note-img',
-        info: { url: 'http://some-img/me', title: 'Bobi and Me' },
+        info: {
+          url: 'https://images2.minutemediacdn.com/image/upload/c_fill,w_1440,ar_16:9,f_auto,q_auto,g_auto/shape/cover/sport/649360-gettyimages-1257218804-2dcca7c37b9738aa461ba0e311c25721.jpg',
+          title: 'Bobi and Me',
+        },
         style: { backgroundColor: '#00d' },
       },
     ]
     utilService.saveToStorage(NOTES_KEY, notes)
   }
-  console.log(notes)
   return notes
 }

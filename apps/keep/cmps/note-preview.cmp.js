@@ -40,7 +40,6 @@ export default {
   },
   computed: {
     getType() {
-      console.log(this.note)
       return this.note.type.replace('-', '')
     },
     imgUrl() {

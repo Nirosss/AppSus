@@ -4,7 +4,6 @@ import noteList from '../cmps/note-list.cmp.js'
 export default {
   template: `
         <section class="main-layout">
-          <h1>Notes Index</h1>
           <note-list :notes="notesToShow" @remove="remove"/>  
         </section>
     `,
