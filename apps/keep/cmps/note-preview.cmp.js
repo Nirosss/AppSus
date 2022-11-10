@@ -63,11 +63,11 @@ export default {
             <component :is="getType" :note="note"></component>
         </section>
         <section v-bind:class="showButtons" class="actions-buttons flex justify-between">
-                        <router-link :to="'/notes/' + note.id" ><button style="background-image: url('../../../../assets/img/buttons/add20x20.png')" title="Edit"></button></router-link>
-                        <button style="background-image: url('../../../../assets/img/buttons/todo20x20.png')" title="Add to do list"></button>
-                        <button style="background-image: url('../../../../assets/img/buttons/pallete20x20.png')" title="Choose color"></button>
-                        <button style="background-image: url('../../../../assets/img/buttons/uploadimg20x20.png')" title="Add ann image"></button>
-                        <button style="background-image: url('../../../../assets/img/buttons/trash20x20.png')" @click="remove(note.id)"></button>
+          <router-link :to="'/notes/' + note.id" ><button style="background-image: url('../../../../assets/img/buttons/add20x20.png')" title="Edit"></button></router-link>
+          <button style="background-image: url('../../../../assets/img/buttons/todo20x20.png')" title="Add to do list"></button>
+          <button style="background-image: url('../../../../assets/img/buttons/uploadimg20x20.png')" title="Add Image"></button>
+          <button class="colorpicker-container" style="background-image: url('../../../../assets/img/buttons/pallete20x20.png')" title="Change color"></button>
+           <button style="background-image: url('../../../../assets/img/buttons/trash20x20.png')" @click="remove(note.id)" title="Delete"></button>
         </section>
 </section>
     `,
@@ -80,14 +80,22 @@ export default {
     }
   },
   computed: {
-    showButtons(){
-      return {invisible : !this.upHere}
+    showButtons() {
+      return { invisible: !this.upHere }
     },
     getType() {
       return this.note.type.replace('-', '')
     },
     imgUrl() {
       return this.note.info.url
+    },
+  },
+  methods: {
+    remove(noteId) {
+      this.$emit('remove', noteId)
+    },
+    save() {
+      console.log(this.note.color)
     },
   },
   components: {
