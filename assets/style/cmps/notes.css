@@ -1,3 +1,7 @@
 .note-preview.blue {
   background-color: blue;
 }
+
+.done {
+  text-decoration: line-through;
+}

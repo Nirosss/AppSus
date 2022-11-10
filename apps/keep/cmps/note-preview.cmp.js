@@ -32,7 +32,9 @@ const notetodos = {
     <section class="note-todos">
       <h2>{{ note.info.lable }}</h2>
       <ul class="todos">
-        <li v-for="(todo,idx) in note.info.todos">{{todo.txt}} Done: {{this.doneAtDate(idx)}}</li>
+        <li v-for="(todo,idx) in note.info.todos" @click="toggleToDo(idx)"
+        :class="isDone(idx)">{{todo.txt}}  Done: {{this.doneAtDate(idx)}}
+        </li>
       </ul>
     </section>
     `,
@@ -55,28 +57,40 @@ const notetodos = {
         return date.toDateString().slice(4, 10)
       }
     },
+    toggleToDo(idx) {
+      if (this.note.info.todos[idx].doneAt) return this.note.info.todos[idx].doneAt = null
+      this.note.info.todos[idx].doneAt = Date.now()
+    },
+    isDone(idx) {
+      return { done: !this.note.info.todos[idx].doneAt }
+    }
   },
 }
 
 export default {
   props: ['note'],
   template: `
-    <div  @mouseleave="unFocus">
+    <div  @mouseleave="unFocus" v-on:keyup.enter="unFocus">
         <section :class="getColor" class="card"  @mouseover="isHover = true" class="note-preview">
         <section class="note-content">  
             <component :is="getType" :note="note"></component>
         </section>
         <section v-bind:class="showButtons" class="actions-buttons flex justify-between">
           <router-link :to="'/notes/' + note.id" ><button style="background-image: url('../../../../assets/img/buttons/add20x20.png')" title="Edit"></button></router-link>
-          <button style="background-image: url('../../../../assets/img/buttons/todo20x20.png')" title="Add to do list"></button>
+          <button  @click.stop="editTodo =! editTodo" style="background-image: url('../../../../assets/img/buttons/todo20x20.png')" title="Add to do list"></button>
           <button @click.stop="editUrl =! editUrl" style="background-image: url('../../../../assets/img/buttons/uploadimg20x20.png')" title="Add Image"></button>
           <button  @click.stop="editColor=true" style="background-image: url('../../../../assets/img/buttons/pallete20x20.png')" title="Change color"></button>
            <button style="background-image: url('../../../../assets/img/buttons/trash20x20.png')" @click="remove(note.id)" title="Delete"></button>
         </section>
       </section>
       <section class="edits" onblur="closeEdits">
+
       <input v-if="editUrl" @mouseleave="editUrl = false"
       type="text" v-model="currNote.info.url" @change="makeType('note-img')"/> 
+
+      <input v-if="editTodo" v-model="newTodo" @mouseleave="editTodo = false"
+      type="text" @change="addTodo"/> 
+
         <div v-if="editColor">
       <h1 @click="currNote.color='blue'">click me to turn blue</h1>
       </div>
@@ -91,7 +105,9 @@ export default {
       noteType: this.getType,
       pageCmps: ['notetxt', 'noteimg'],
       "editUrl": false,
-      "editColor": false
+      "editColor": false,
+      "editTodo": false,
+      newTodo: '',
     }
   },
   computed: {
@@ -117,16 +133,25 @@ export default {
       notesService.save(this.currNote)
     },
     unFocus() {
-      console.log("close")
       // [this.editUrl, this.isHover].forEach(edit => {edit = false}); not working
       this.editUrl = false
       this.editColor = false
+      this.editTodo = false
       this.isHover = false
     },
     makeType(type) {
       this.currNote.type = type
       this.save()
-    }
+    },
+    addTodo() {
+      if (!this.currNote.info.todos) this.currNote.info.todos = []
+      this.currNote.info.todos.push({ "txt": this.newTodo, "doneAt": null })
+
+
+      //not sure if we should have types if you can add images and tdo to same note
+      console.log(this.newTodo)
+      this.makeType("note-todos")
+    },
   },
   components: {
     notetxt,
