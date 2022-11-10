@@ -36,3 +36,9 @@ export function showErrorMsg(txt) {
 export function removeMailFromREnder(id) {
     removeMailFromREnder(id)
 }
+
+export function remove(id){
+    eventBus.emit('removeNote',id)
+    console.log(id)
+    
+}

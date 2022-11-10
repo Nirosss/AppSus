@@ -94,7 +94,7 @@ export default {
   methods: {
     remove(noteId) {
       console.log('delete')
-      this.$emit('remove', noteId)
+      eventBus.on('remove',noteId)
     },
     save() {
       console.log(this.note.color)
