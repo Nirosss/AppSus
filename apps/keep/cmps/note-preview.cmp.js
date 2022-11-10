@@ -29,23 +29,35 @@ const notetodos = {
   template: `
     <section class="note-todos">
       <h2>{{ note.info.lable }}</h2>
-      <ul class="todos clean list">
-        <li v-for="todo in note.info.todos">{{todo.txt}}</li>
+      <ul class="todos clean-list">
+        <li v-for="(todo,idx) in note.info.todos">{{todo.txt}} Done: {{this.doneAtDate(idx)}}</li>
       </ul>
     </section>
     `,
   data() {
-    return{
-      todos:[]
+    return {
+      todos: [],
     }
   },
   computed: {
     toDos() {
       console.log(note)
-      return this.note.info.todos
+      return 'this.note.info.todos'
     },
+        
   },
+  methods: {
+      doneAtDate(idx) {
+      let doneAt = this.note.info.todos[idx].doneAt
+      if(doneAt){
+        let date = new Date(doneAt)
+        console.log(date)
+        return date.toDateString().slice(4, 10)
+      }
+      }
 }
+}
+
 
 
 
