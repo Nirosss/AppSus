@@ -1,7 +1,7 @@
-.mail-list {
+/* .mail-list {
   table-layout: auto;
   width: 100%;
-}
+} */
 
 .mail-preview {
   white-space: nowrap;
@@ -15,11 +15,11 @@
 .mail-preview:hover {
   border-bottom: 2px solid var(--primary-clr-500);
 }
-.from-container {
+/* .from-container {
   min-width: 168px;
   max-width: 168px;
   overflow: hidden;
-}
+} */
 
 .from {
 }
@@ -43,4 +43,65 @@
   position: relative;
   width: 10em;
   right: 0;
+}
+
+.mail-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "subject-container . . buttons-container"
+    "from-container from-container from-container ."
+    "mail-body-container mail-body-container mail-body-container mail-body-container"
+    "mail-body-container mail-body-container mail-body-container mail-body-container";
+}
+
+.subject-container {
+  grid-area: subject-container;
+}
+
+.buttons-container {
+  grid-area: buttons-container;
+  justify-self: end;
+}
+
+.buttons-container > button {
+  width: 20px;
+  background-color: unset;
+  border: none;
+}
+
+.from-container {
+  grid-area: from-container;
+}
+
+.mail-body-container {
+  grid-area: mail-body-container;
+}
+
+.mail-preview {
+  display: grid;
+  grid-template-areas: "marks-container name-container subject-body changeable-container";
+  justify-content: start;
+}
+
+.marks-container {
+  grid-area: marks-container;
+  width: 60px;
+}
+.name-container {
+  grid-area: name-container;
+  width: 168px;
+}
+.subject-body {
+  grid-area: subject-body;
+  overflow: hidden;
+}
+.changeable-container {
+  grid-area: changeable-container;
+  width: 50px;
+  text-align: right;
+  justify-self: end;
 }

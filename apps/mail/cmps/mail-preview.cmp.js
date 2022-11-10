@@ -4,15 +4,14 @@ export default {
     template: `
           <!-- <section class="mail-preview flex main-layout clickable" v-bind:class="mailStyle" > -->
           <section 
-          class="mail-preview flex main-layout clickable" v-bind:class="mailStyle" >
-           <td class="first-col">
-              <span class="from">{{ mail.from }} &nbsp</span>
-</td>
-<span class="from">{{ mail.subject }}- &nbsp</span>
-              <td>
-              <span class="email-body">{{ mail.body }}</span>
-</td>
-<td class="last-col">Time</td>
+          class="mail-preview main-layout clickable" v-bind:class="mailStyle" >
+           <div class="marks-container">⭐✡️</div>
+              <div class="name-container">{{ mail.name }} </div>
+
+          <div class="subject-body">{{ mail.subject }}- &nbsp   {{ mail.body }}</div>      
+             
+
+            <div class="changeable-container">{{time}}</div>
 </section>
       `,
     computed: {
@@ -20,6 +19,17 @@ export default {
             return { opened: this.mail.isRead }
         }
     },
-    methods: {
+    computed: {
+        time() {
+            if (Date.now() - this.mail.sentAt < 1000 * 60 * 60 * 24) {
+                const date = new Date(this.mail.sentAt);
+                return date.toLocaleTimeString()
+            }
+            const date = new Date(this.mail.sentAt);
+            const month = date.getMonth() + 1
+            const day = date.getDate()
+            return [month, day].join("/")
+
+        }
     }
 }

@@ -3,9 +3,9 @@ import mailPreview from './mail-preview.cmp.js'
 export default {
     props: ['mails'],
     template: `
-        <table class="mail-list main-layout">
-            <!-- <ul class="clean-list"> -->
-                <tr v-for="mail in mails" :key="mail.id">
+        <section class="mail-list main-layout">
+            <ul class="clean-list">
+                <li v-for="mail in mails" :key="mail.id">
                 <router-link :to="'/mail/' + mail.id">
                     <mail-preview :mail="mail"/>
                     </router-link>
@@ -15,7 +15,7 @@ export default {
                         <!-- <button @click="remove(mail.id)">x</button> -->
                   
             <!-- </ul> -->
-</table>
+</section>
     `,
     methods: {
         remove(mailId) {
