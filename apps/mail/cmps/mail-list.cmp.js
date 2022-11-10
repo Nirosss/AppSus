@@ -9,6 +9,8 @@ export default {
                 <router-link :to="'/mail/' + mail.id">
                     <mail-preview :mail="mail"/>
                     </router-link>
+</li>
+</ul>
 </section>
     `,
     methods: {
