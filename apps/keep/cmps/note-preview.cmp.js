@@ -1,3 +1,5 @@
+import { eventBus } from '../../../services/event-bus.service.js'
+
 const notetxt = {
   props: ['note'],
   template: `
@@ -66,11 +68,10 @@ export default {
           <router-link :to="'/notes/' + note.id" ><button style="background-image: url('../../../../assets/img/buttons/add20x20.png')" title="Edit"></button></router-link>
           <button style="background-image: url('../../../../assets/img/buttons/todo20x20.png')" title="Add to do list"></button>
           <button style="background-image: url('../../../../assets/img/buttons/uploadimg20x20.png')" title="Add Image"></button>
-          <button class="colorpicker-container" style="background-image: url('../../../../assets/img/buttons/pallete20x20.png')" title="Change color"></button>
+          <button style="background-image: url('../../../../assets/img/buttons/pallete20x20.png')" title="Change color"></button>
            <button style="background-image: url('../../../../assets/img/buttons/trash20x20.png')" @click="remove(note.id)" title="Delete"></button>
         </section>
-</section>
-    `,
+      </section>`,
   data() {
     return {
       upHere: false,
@@ -92,6 +93,7 @@ export default {
   },
   methods: {
     remove(noteId) {
+      console.log('delete')
       this.$emit('remove', noteId)
     },
     save() {

@@ -1,4 +1,5 @@
 import { notesService } from '../services/note.service.js'
+import { eventBus } from '../../../services/event-bus.service.js'
 import noteList from '../cmps/note-list.cmp.js'
 
 export default {
