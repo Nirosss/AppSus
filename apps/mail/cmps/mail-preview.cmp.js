@@ -17,20 +17,15 @@ export default {
     computed: {
         mailStyle() {
             return { opened: this.mail.isRead }
-        }
-    },
-    computed: {
+        },
         time() {
-            console.log("time")
             if (Date.now() - this.mail.sentAt < 1000 * 60 * 60 * 24) {
                 const date = new Date(this.mail.sentAt);
                 return date.toLocaleTimeString()
             }
-            const date = new Date(this.mail.sentAt);
-            const month = date.getMonth() + 1
-            const day = date.getDate()
-            return [month, day].join("/")
-
+            var options = { day: "numeric", month: "short" };
+            return new Date(this.mail.sentAt).toLocaleDateString("en-US", options);
         }
-    }
+
+    },
 }
