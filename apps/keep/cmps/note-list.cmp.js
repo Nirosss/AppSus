@@ -4,7 +4,7 @@ export default {
   props: ['notes'],
   template: `<section className="notes">
                 <div class="notes-list clean-list">
-                    <div class="card" v-for="note in notes" :key="note.id">
+                    <div class="card flex" v-for="note in notes" :key="note.id">
                         <note-preview :note="note"/>
                         <section class="actions">
                         <router-link :to="'/notes/' + note.id">Details</router-link> |
