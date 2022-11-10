@@ -49,7 +49,10 @@ function _createNotes() {
       {
         id: 'n102',
         type: 'note-img',
-        info: { url: 'http://some-img/me', title: 'Bobi and Me' },
+        info: {
+          url: 'https://pyxis.nymag.com/v1/imgs/b43/b2c/4c644da1f8f1d6ecfa62127c29a4622f66-trump-horse.2x.rsocial.w600.jpg',
+          title: 'Bobi and Me',
+        },
         style: { backgroundColor: '#00d' },
       },
       {
