@@ -1,4 +1,6 @@
 import { mailService } from '../services/mail.service.js'
+import { eventBus, showErrorMsg, showSuccessMsg, removeMailFromREnder } from "../../../services/event-bus.service.js"
+
 
 
 
@@ -23,7 +25,7 @@ export default {
     <h1 class="detail-mail name">{{mail.name}}</h1>
     <h1 class="detail-mail from"><{{mail.from}}></h1>
 </div>
-    <p class= "mail-body-container">{{mail.body}}</p>
+    <pre class= "mail-body-container">{{mail.body}}</pre>
   </section>`,
   data() {
     return {
@@ -33,7 +35,10 @@ export default {
   created() {
     const { id } = this.$route.params
     mailService.get(id)
-      .then(mail => this.mail = mail)
+      .then(mail => {
+        this.mail = mail
+        removeMailFromREnder(id)
+      })
   },
   methods: {
     remove() {

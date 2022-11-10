@@ -22,7 +22,9 @@ export default {
         time() {
             if (Date.now() - this.mail.sentAt < 1000 * 60 * 60 * 24) {
                 const date = new Date(this.mail.sentAt);
-                return date.toLocaleTimeString()
+                const hour = date.getHours()
+                const minute = date.getMinutes()
+                return `${hour}:${minute}`
             }
             var options = { day: "numeric", month: "short" };
             return new Date(this.mail.sentAt).toLocaleDateString("en-US", options);
