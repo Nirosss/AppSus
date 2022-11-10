@@ -2,7 +2,7 @@ const notetxt = {
   props:['note'],
   template: `
       <section class="notetxt">
-      <p>{{ note.info.txt }}</p>
+      <h3>{{ note.info.txt }}</h3>
     </section>
     `,
  
@@ -23,6 +23,31 @@ const noteimg = {
     },
   },
 }
+
+const notetodos = {
+  props: ['note'],
+  template: `
+    <section class="note-todos">
+      <h2>{{ note.info.lable }}</h2>
+      <ul class="todos clean list">
+        <li v-for="todo in note.info.todos">{{todo.txt}}</li>
+      </ul>
+    </section>
+    `,
+  data() {
+    return{
+      todos:[]
+    }
+  },
+  computed: {
+    toDos() {
+      console.log(note)
+      return this.note.info.todos
+    },
+  },
+}
+
+
 
 export default {
   props: ['note'],
@@ -49,5 +74,6 @@ export default {
   components: {
     notetxt,
     noteimg,
+    notetodos,
   },
 }
