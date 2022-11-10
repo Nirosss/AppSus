@@ -5,7 +5,7 @@ export default {
   template: `
         <section class="main-layout">
           <h1>Notes Index</h1>
-          <note-list :notes="notesToShow" @remove="remove(noteId)"/>  
+          <note-list :notes="notesToShow" @remove="remove"/>  
         </section>
     `,
   data() {
@@ -17,16 +17,14 @@ export default {
   },
   methods: {
     remove(noteId) {
-      notesService.remove(noteId).then(() => {
+        notesService.remove(noteId).then(() => {
         const idx = this.notes.findIndex((note) => note.id === noteId)
         this.notes.splice(idx, 1)
       })
       // this.$emit('remove', noteId)
     },
     getNotes() {
-      notesService.query().then((notes) => {
-        console.log(notes), (this.notes = notes)
-      })
+      notesService.query().then(notes => this.notes = notes)
     },
     filter(filterBy) {
       this.filterBy = filterBy

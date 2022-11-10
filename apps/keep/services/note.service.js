@@ -49,7 +49,10 @@ function _createNotes() {
       {
         id: 'n102',
         type: 'note-img',
-        info: { url: 'http://some-img/me', title: 'Bobi and Me' },
+        info: {
+          url: 'https://pyxis.nymag.com/v1/imgs/b43/b2c/4c644da1f8f1d6ecfa62127c29a4622f66-trump-horse.2x.rsocial.w600.jpg',
+          title: 'Bobi and Me',
+        },
         style: { backgroundColor: '#00d' },
       },
       {
@@ -62,6 +65,29 @@ function _createNotes() {
             { txt: 'Coding power', doneAt: 187111111 },
           ],
         },
+      },
+      {
+        id: 'n106',
+        type: 'note-todos',
+        info: {
+          label: 'Get my stuff together',
+          todos: [
+            { txt: 'Driving liscence', doneAt: null },
+            { txt: 'Coding power', doneAt: 187111111 },
+          ],
+        },
+      },
+      {
+        id: 'n104',
+        type: 'note-txt',
+        isPinned: true,
+        info: { txt: 'Fullstack Me Baby!' },
+      },
+      {
+        id: 'n105',
+        type: 'note-img',
+        info: { url: 'http://some-img/me', title: 'Bobi and Me' },
+        style: { backgroundColor: '#00d' },
       },
     ]
     utilService.saveToStorage(NOTES_KEY, notes)
