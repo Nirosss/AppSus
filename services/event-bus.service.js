@@ -37,8 +37,8 @@ export function removeMailFromREnder(id) {
     removeMailFromREnder(id)
 }
 
-export function remove(id){
+export function removeNote(id){
     eventBus.emit('removeNote',id)
-    console.log(id)
+    
     
 }

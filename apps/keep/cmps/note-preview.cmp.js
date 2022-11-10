@@ -1,4 +1,4 @@
-import { eventBus } from '../../../services/event-bus.service.js'
+import { removeNote } from '../../../services/event-bus.service.js'
 
 const notetxt = {
   props: ['note'],
@@ -93,12 +93,10 @@ export default {
   },
   methods: {
     remove(noteId) {
-      console.log('delete')
-      eventBus.on('remove',noteId)
+      removeNote(noteId)
+      
     },
-    save() {
-      console.log(this.note.color)
-    },
+    
   },
   components: {
     notetxt,

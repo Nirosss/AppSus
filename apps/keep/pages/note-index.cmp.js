@@ -5,7 +5,7 @@ import noteList from '../cmps/note-list.cmp.js'
 export default {
   template: `
         <section >
-          <note-list :notes="notesToShow" @removeNote="removeNote"/>  
+          <note-list :notes="notesToShow" />  
         </section>
     `,
   data() {
@@ -39,6 +39,7 @@ export default {
   },
   created() {
     this.getNotes()
+    eventBus.on('removeNote',this.removeNote)
   },
   components: {
     noteList,
