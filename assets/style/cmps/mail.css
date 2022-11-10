@@ -83,6 +83,7 @@
 
 .mail-preview {
   display: grid;
+  grid-template-columns: 60px 168px 1fr 50px;
   grid-template-areas: "marks-container name-container subject-body changeable-container";
   justify-content: start;
   font-size: 14px;
@@ -91,20 +92,18 @@
 
 .marks-container {
   grid-area: marks-container;
-  width: 60px;
+  /* width: 60px; */
 }
 .name-container {
   grid-area: name-container;
-  width: 168px;
+  /* width: 168px; */
 }
 .subject-body {
+  /* width: 1fr; */
   grid-area: subject-body;
   overflow: hidden;
 }
 .changeable-container {
   grid-area: changeable-container;
-  width: 50px;
-  justify-self: stretch;
-  /* position: absolute; */
-  /* right: 0; */
+  text-align: end;
 }
