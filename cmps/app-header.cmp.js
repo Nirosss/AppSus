@@ -36,7 +36,7 @@ export default {
   methods: {
     toggleMenu() {
       this.menuOpen = !this.menuOpen
-      console.log(this.menuOpen)
+      document.querySelector('body').classList.toggle('menu-open')
     }
   }
 }

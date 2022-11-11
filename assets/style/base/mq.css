@@ -39,7 +39,6 @@
   right: 3%;
 }
 
-
 /* SMALL */
 @media (min-width: 640px) {
   .burger-btn-menu {
@@ -49,18 +48,6 @@
 
 /* Medium */
 @media (min-width: 880px) {
-  /* .card {
-        flex-direction: row;
-        
-    } */
-    .burger-btn-menu {
-      display: block;
-      
-      
-      position: absolute;
-      right: 3%;
-    }
-    
   .card .card-img {
     align-self: flex-start;
     flex-basis: 50%;
@@ -88,6 +75,5 @@
   .main-header .nav-bar a {
     height: 130px;
     width: 130px;
-    
   }
 }
