@@ -92,7 +92,7 @@ export default {
       <input v-if="editTodo" v-model="newTodo" @mouseleave="editTodo = false"
       type="text" @change="addTodo"/> 
 
-      <div v-if="editColor">
+      <div class="color-picker-container"v-if="editColor">
        <color-picker :note="note" @setColor="changeColor">
       </div>
     </section> 
