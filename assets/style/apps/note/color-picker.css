@@ -1,14 +1,15 @@
 .color-picker-container{
 border: solid 1px;
+border-radius: 5px;
 background-color: white;
-opacity: 1;
 z-index: 45;
 margin-top: -10px;
 display: flex;
 align-items: center;
-height: 60px;
-width: 250px;
-
+height: 66px;
+max-width: 200px;
+margin-inline-start: auto;
+margin-inline-end: auto;
 }
 .color-picker-buttons {
     padding: 1ren;
@@ -18,9 +19,9 @@ width: 250px;
   all: unset;
   z-index: 40;
   border-radius: 100%;
-  margin: 1px;
+  margin: 2px;
   padding: 0;
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
  
 }

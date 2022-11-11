@@ -95,6 +95,7 @@ export default {
       <div class="color-picker-container"v-if="editColor">
        <color-picker :note="note" @setColor="changeColor">
       </div>
+    </section>
     </section> 
   </div>
       
@@ -122,7 +123,7 @@ export default {
       return this.note.info.url
     },
     getColor() {
-      return {'background-color': this.note.color}
+      return { 'background-color': this.note.color }
     },
   },
   methods: {
@@ -151,7 +152,7 @@ export default {
       console.log(this.newTodo)
       this.makeType('note-todos')
     },
-    changeColor(note,color) {
+    changeColor(note, color) {
       console.log(note)
       this.currNote = note
       this.currNote.color = color
