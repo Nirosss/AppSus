@@ -2,6 +2,29 @@ import { removeNote } from '../../../services/event-bus.service.js'
 import { notesService } from '../services/note.service.js'
 import colorPicker from '../cmps/color-picker.cmp.js'
 
+const notevideo = {
+  props: ['note'],
+  template: `
+      <section class="note-video">
+        <article class="iframe-container">
+              <iframe class="video-frame"  :src="videoUrl" frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+              gyroscope; picture-in-picture" allowfullscreen>
+              title="YouTube video player"</iframe>
+            </article>
+        <h2>{{ note.info.title }}</h2>
+    </section>
+    `,
+  methods: {},
+  computed: {
+    videoUrl() {
+      console.log(this.note.info.url)
+      return this.note.info.url
+    },
+  },
+}
+
+
 const notetxt = {
   props: ['note'],
   template: `
@@ -162,5 +185,6 @@ export default {
     noteimg,
     notetodos,
     colorPicker,
+    notevideo,
   },
 }

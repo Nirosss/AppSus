@@ -58,6 +58,15 @@ function _createNotes() {
         style: { backgroundColor: '#00d' },
       },
       {
+        id: 'n166',
+        type: 'note-video',
+        info: {
+          url: 'https://www.youtube.com/embed/xbasufPxHPs',
+          title: 'חיית הברזל',
+        },
+        style: { backgroundColor: '#00d' },
+      },
+      {
         id: 'n103',
         type: 'note-todos',
         info: {
@@ -90,7 +99,7 @@ function _createNotes() {
         type: 'note-img',
         info: {
           url: 'https://images2.minutemediacdn.com/image/upload/c_fill,w_1440,ar_16:9,f_auto,q_auto,g_auto/shape/cover/sport/649360-gettyimages-1257218804-2dcca7c37b9738aa461ba0e311c25721.jpg',
-          title: 'Bobi and Me',
+          title: '',
         },
         style: { backgroundColor: '#00d' },
       },
@@ -99,7 +108,7 @@ function _createNotes() {
         type: 'note-txt',
         isPinned: true,
         info: {
-          txt: 'What is Lorem IpsumLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+          txt: "They are waiting to take us into \n The severed garden \n Do you know how pale and wanton thrillful \n Comes death on a strange hour \nUnannounced, unplanned for\nLike a scaring over-friendly guest\nYou've brought to bed\nDeath makes angels of us all\nAnd gives us wings\nWhere we had shoulders\nSmooth as raven's claws\nNo more money, no more fancy dress\nThis other kingdom seems by far the best\nUntil its other jaw reveals incest\nAnd loose obedience to a vegetable law\nI will not go\nPrefer a feast of friends\nTo the giant family",
         },
       },
       {
@@ -107,7 +116,16 @@ function _createNotes() {
         type: 'note-img',
         info: {
           url: 'https://ichef.bbci.co.uk/news/976/cpsprodpb/B875/production/_102512274_gettyimages-518360318.jpg',
-          title: 'Bobi and Me',
+          title: 'Me',
+        },
+        style: { backgroundColor: '#00d' },
+      },
+      {
+        id: 'n166',
+        type: 'note-video',
+        info: {
+          url: 'https://www.youtube.com/embed/pD0HqG24W4k',
+          title: 'Best of de andre',
         },
         style: { backgroundColor: '#00d' },
       },
@@ -127,7 +145,7 @@ function _createNotes() {
         type: 'note-img',
         info: {
           url: 'https://images2.minutemediacdn.com/image/upload/c_fill,w_1440,ar_16:9,f_auto,q_auto,g_auto/shape/cover/sport/649360-gettyimages-1257218804-2dcca7c37b9738aa461ba0e311c25721.jpg',
-          title: 'Bobi and Me',
+          title: 'Bobby Mcgee',
         },
         style: { backgroundColor: '#00d' },
       },
@@ -144,7 +162,7 @@ function _createNotes() {
         type: 'note-img',
         info: {
           url: 'https://ichef.bbci.co.uk/news/976/cpsprodpb/15242/production/_109249568_hi057324948.jpg',
-          title: 'Bobi and Me',
+          title: '바부 and Me',
         },
         style: { backgroundColor: '#00d' },
       },

@@ -3,11 +3,11 @@
   
 }
 .notes-list {
-  column-count: 5;
+  column-count: 7;
   column-width: 200px;
   column-gap: 15px;
   break-inside:avoid-column;
-  width: min(100% - 15px, 1200px);
+  width: min(100% - 15px, 1920px);
   margin-inline:auto;
  
 }
