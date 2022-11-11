@@ -27,6 +27,7 @@ export default {
     <h1 class="detail-mail from"><{{mail.from}}></h1>
 </div>
     <pre class= "mail-body-container">{{mail.body}}</pre>
+    <button @click="reply">Reply</button>
   </section>`,
   data() {
     return {
@@ -47,6 +48,10 @@ export default {
       removeMail(this.id)
       showUserMsg({ txt: "mail deleted" })
       this.$router.go(-1)
+    },
+    reply() {
+      this.mail.history = { ...this.mail }
+      console.log(this.mail.history)
     }
   }
 }

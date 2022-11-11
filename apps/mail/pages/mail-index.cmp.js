@@ -33,6 +33,8 @@ export default {
   },
   methods: {
     removeMail(mailId) {
+      debugger
+      console.log(mailId)
       mailService.remove(mailId)
         .then(() => {
           const idx = this.mails.findIndex(mail => mail.id === mailId)
