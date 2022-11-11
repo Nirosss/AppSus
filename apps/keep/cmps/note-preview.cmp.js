@@ -83,7 +83,7 @@ export default {
           <button  @click.stop="editColor=true" style="background-image: url('../../../../assets/img/buttons/pallete20x20.png')" title="Change color"></button>
            <button style="background-image: url('../../../../assets/img/buttons/trash20x20.png')" @click="remove(note.id)" title="Delete"></button>
         </section>
-      </section>
+      
     <section class="edits" onblur="closeEdits">
 
       <input v-if="editUrl" @mouseleave="editUrl = false"
@@ -96,7 +96,7 @@ export default {
        <color-picker :note="note" @setColor="changeColor">
       </div>
     </section> 
-      </div>
+  </div>
       
       `,
   data() {

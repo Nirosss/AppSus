@@ -3,18 +3,24 @@ border: solid 1px;
 background-color: white;
 opacity: 1;
 z-index: 45;
-margin-top: -50px;
+margin-top: -10px;
+display: flex;
+align-items: center;
 height: 60px;
-width: 200px;
-}
+width: 250px;
 
+}
+.color-picker-buttons {
+    padding: 1ren;
+   
+}
 .color-picker-button {
   all: unset;
   z-index: 40;
   border-radius: 100%;
   margin: 1px;
   padding: 0;
-  width: 56px;
+  width: 28px;
   height: 28px;
  
 }

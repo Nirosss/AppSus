@@ -1,7 +1,7 @@
 export default {
   props: ['note'],
   template: `
-  <section class="color-picker-buttons flex">
+  <section class="color-picker-buttons">
     <button class="color-picker-button" style="background-color: #f28b82" class="color-button" @click="changeColor('#f28b82')"></button>
     <button class="color-picker-button" style="background-color: #fbbc04" class="color-button" @click="changeColor('#fbbc04')"></button>
     <button class="color-picker-button" style="background-color: #ccff90" class="color-button" @click="changeColor('#ccff90')"></button>
