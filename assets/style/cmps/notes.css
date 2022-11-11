@@ -1,11 +1,17 @@
-.note-preview.blue {
-  background-color: blue;
-}
-
 .done {
   text-decoration: line-through;
 }
 
 .done input {
   text-decoration: line-through;
+}
+
+.todo-input{
+  all: unset;
+}
+
+.todo-checkbox{
+  
+  width: 15px;
+  display: inline-block;
 }

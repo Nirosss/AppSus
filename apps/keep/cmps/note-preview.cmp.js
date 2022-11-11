@@ -6,7 +6,7 @@ const notetxt = {
   props: ['note'],
   template: `
       <section class="note-txt">
-      <p>{{ note.info.txt }}</p>
+      <p contenteditable="true">{{ note.info.txt }}</p>
     </section>
     `,
 }
@@ -32,11 +32,10 @@ const notetodos = {
   template: `
     <section class="note-todos">
       <h2>{{ note.info.lable }}</h2>
-      <ul class="todos">
-
-        <li v-for="(todo,idx) in note.info.todos"  :class="isDone(idx)">
-        <input type="textarea" v-model="note.info.todos[idx].txt" @change="$emit('saveMe')">
-        <input type="checkbox" @input='toggleToDo(idx)'>
+      <ul class="todos clean-list">
+        <li class="todo-phrase" v-for="(todo,idx) in note.info.todos"  :class="isDone(idx)">
+        <input class="todo-checkbox" type="checkbox" @input='toggleToDo(idx)'>
+        <input class="todo-input" type="textarea" v-model="note.info.todos[idx].txt" @change="$emit('saveMe')">
         </li>
       </ul>
 
