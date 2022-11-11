@@ -3,11 +3,11 @@
   
 }
 .notes-list {
-  column-count: 7;
-  column-width: 200px;
+  column-count: 6;
+  column-width: 238px;
   column-gap: 15px;
   break-inside:avoid-column;
-  width: min(100% - 15px, 1920px);
+  width: min(100% - 25px,1660px);
   margin-inline:auto;
  
 }
@@ -27,7 +27,7 @@
 .actions-buttons{
     margin-inline-start: 1.5rem;
     margin-inline-end: 1.5rem;
-    padding-bottom: 8px;
+    padding: 5px;
     position: relative;
 }
 

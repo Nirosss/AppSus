@@ -58,7 +58,13 @@ function _createNotes() {
         style: { backgroundColor: '#00d' },
       },
       {
-        id: 'n166',
+        id: 'n103',
+        type: 'note-txt',
+        isPinned: true,
+        info: { txt: 'Fullstack Me Baby!' },
+      },
+      {
+        id: 'n104',
         type: 'note-video',
         info: {
           url: 'https://www.youtube.com/embed/xbasufPxHPs',
@@ -67,7 +73,7 @@ function _createNotes() {
         style: { backgroundColor: '#00d' },
       },
       {
-        id: 'n103',
+        id: 'n105',
         type: 'note-todos',
         info: {
           label: 'Get my stuff together',
@@ -79,27 +85,10 @@ function _createNotes() {
       },
       {
         id: 'n106',
-        type: 'note-todos',
-        info: {
-          label: 'Get my stuff together',
-          todos: [
-            { txt: 'Driving liscence', doneAt: null },
-            { txt: 'Coding power', doneAt: 187111111 },
-          ],
-        },
-      },
-      {
-        id: 'n104',
-        type: 'note-txt',
-        isPinned: true,
-        info: { txt: 'Fullstack Me Baby!' },
-      },
-      {
-        id: 'n105',
         type: 'note-img',
         info: {
-          url: 'https://images2.minutemediacdn.com/image/upload/c_fill,w_1440,ar_16:9,f_auto,q_auto,g_auto/shape/cover/sport/649360-gettyimages-1257218804-2dcca7c37b9738aa461ba0e311c25721.jpg',
-          title: '',
+          url: 'https://images.immediate.co.uk/production/volatile/sites/18/2018/12/GettyImages-594833393-11fe4fe.jpg?quality=90&crop=246px,0px,2447px,1630px&fit=700,466',
+          title: 'Home is where the grass is',
         },
         style: { backgroundColor: '#00d' },
       },
@@ -121,7 +110,7 @@ function _createNotes() {
         style: { backgroundColor: '#00d' },
       },
       {
-        id: 'n166',
+        id: 'n109',
         type: 'note-video',
         info: {
           url: 'https://www.youtube.com/embed/pD0HqG24W4k',
@@ -130,27 +119,7 @@ function _createNotes() {
         style: { backgroundColor: '#00d' },
       },
       {
-        id: 'n109',
-        type: 'note-todos',
-        info: {
-          label: 'Get my stuff together',
-          todos: [
-            { txt: 'Coding liscence', doneAt: null },
-            { txt: 'Power cord', doneAt: 199111111 },
-          ],
-        },
-      },
-      {
         id: 'n110',
-        type: 'note-img',
-        info: {
-          url: 'https://images2.minutemediacdn.com/image/upload/c_fill,w_1440,ar_16:9,f_auto,q_auto,g_auto/shape/cover/sport/649360-gettyimages-1257218804-2dcca7c37b9738aa461ba0e311c25721.jpg',
-          title: 'Bobby Mcgee',
-        },
-        style: { backgroundColor: '#00d' },
-      },
-      {
-        id: 'n111',
         type: 'note-txt',
         isPinned: true,
         info: {
@@ -158,16 +127,7 @@ function _createNotes() {
         },
       },
       {
-        id: 'n112',
-        type: 'note-img',
-        info: {
-          url: 'https://ichef.bbci.co.uk/news/976/cpsprodpb/15242/production/_109249568_hi057324948.jpg',
-          title: '바부 and Me',
-        },
-        style: { backgroundColor: '#00d' },
-      },
-      {
-        id: 'n119',
+        id: 'n111',
         type: 'note-todos',
         info: {
           label: 'Get my stuff together',
@@ -176,6 +136,24 @@ function _createNotes() {
             { txt: 'Coding powder', doneAt: 187111111 },
           ],
         },
+      },
+      {
+        id: 'n112',
+        type: 'note-img',
+        info: {
+          url: 'https://ichef.bbci.co.uk/news/976/cpsprodpb/15242/production/_109249568_hi057324948.jpg',
+          title: '바부 and She',
+        },
+        style: { backgroundColor: '#00d' },
+      },
+      {
+        id: 'n114',
+        type: 'note-img',
+        info: {
+          url: 'https://images2.minutemediacdn.com/image/upload/c_fill,w_1440,ar_16:9,f_auto,q_auto,g_auto/shape/cover/sport/649360-gettyimages-1257218804-2dcca7c37b9738aa461ba0e311c25721.jpg',
+          title: 'Bobby Mcgee',
+        },
+        style: { backgroundColor: '#00d' },
       },
     ]
     utilService.saveToStorage(NOTES_KEY, notes)
