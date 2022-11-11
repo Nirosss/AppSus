@@ -6,7 +6,7 @@ const notetxt = {
   props: ['note'],
   template: `
       <section class="note-txt">
-      <h3>{{ note.info.txt }}</h3>
+      <p>{{ note.info.txt }}</p>
     </section>
     `,
 }
