@@ -38,6 +38,8 @@
   width: 20px;
   background-repeat: no-repeat;
   background-position: center;
+  opacity: 0.6;
+  
 }
 
 .actions-buttons button > img{

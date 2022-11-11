@@ -1,21 +1,20 @@
 export default {
   props: ['note'],
   template: `
-  <section class="color-buttons flex">
-    <button style="background-color: #ba883d" class="color-button" @click="changeColor('#ba883d')"></button>
-    <button style="background-color: #b8b82e" class="color-button" @click="changeColor('#b8b82e')"></button>
-    <button style="background-color: #83b853" class="color-button" @click="changeColor('#83b853')"></button>
-    <button style="background-color: #3e876f" class="color-button" @click="changeColor('#3e876f')"></button>
-    <button style="background-color: #3e7587" class="color-button" @click="changeColor('#3e7587')"></button>
-    <button style="background-color: #b8b82e" class="color-button" @click="changeColor('#ba883d')"></button>
-    <button style="background-color: #3e5587" class="color-button" @click="changeColor('#3e5587')"></button>
-    <button style="background-color: #653e87" class="color-button" @click="changeColor('#653e87')"></button>
-    <button style="background-color: #783868" class="color-button" @click="changeColor('#783868')"></button>
+  <section class="color-picker-buttons flex">
+    <button class="color-picker-button" style="background-color: #f28b82" class="color-button" @click="changeColor('#f28b82')"></button>
+    <button class="color-picker-button" style="background-color: #fbbc04" class="color-button" @click="changeColor('#fbbc04')"></button>
+    <button class="color-picker-button" style="background-color: #ccff90" class="color-button" @click="changeColor('#ccff90')"></button>
+    <button class="color-picker-button" style="background-color: #a7ffeb" class="color-button" @click="changeColor('#a7ffeb')"></button>
+    <button class="color-picker-button" style="background-color: #aecbfa" class="color-button" @click="changeColor('#aecbfa')"></button>
+    <button class="color-picker-button" style="background-color: #d7aefb" class="color-button" @click="changeColor('#d7aefb')"></button>
+    <button class="color-picker-button" style="background-color: #fdcfe8" class="color-button" @click="changeColor('#fdcfe8')"></button>
+    <button class="color-picker-button" style="background-color: #e8eaed" class="color-button" @click="changeColor('#e8eaed')"></button>
   </section>`,
-  
-  methods:{
-    changeColor(color){
-        this.$emit('setColor', this.note,color)
-    }
-  }
+
+  methods: {
+    changeColor(color) {
+      this.$emit('setColor', this.note, color)
+    },
+  },
 }

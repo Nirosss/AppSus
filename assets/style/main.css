@@ -21,3 +21,6 @@
 /* Apps */
 @import "apps/mail/email-app.css";
 @import "apps/note/note-app.css";
+
+/* App Components */
+@import "apps/note/color-picker.css"
