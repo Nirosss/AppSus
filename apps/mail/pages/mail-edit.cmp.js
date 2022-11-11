@@ -4,7 +4,7 @@ import { eventBus, showErrorMsg, showSuccessMsg } from "../../../services/event-
 export default {
     template: `
         <section class="mail-edit">
-           <header class="flex"><span>New Message</span><span>X</span> </header>
+           <header class="flex"><span>New Message</span><span @click='closeEdit'>X</span> </header>
             <form @submit.prevent="save">
                 <input ref="to" type="text" v-model="mailToEdit.to" class="to"/>
                 <input  type="text" v-model="mailToEdit.subject" class="flex"/>
@@ -41,6 +41,12 @@ export default {
                     console.log('OOps:', err)
                     showErrorMsg(`Cannot save mail`)
                 })
+        },
+        closeEdit() {
+            this.mailToEdit.lable = "draft";
+            console.log(this.mailToEdit.lable)
+            this.save()
+            this.$emit('closeModal')
         }
     }
 }

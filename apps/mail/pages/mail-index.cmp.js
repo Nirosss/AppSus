@@ -10,11 +10,12 @@ export default {
   template: `
     <section class="mail-app">
         <mail-filter @filter="setFilter"/>
-        <router-link to="/mail/edit">Add a mail</router-link>
+        <div @click='edit=true'>Compose</div>
         <mail-list 
             @remove="removeMail" 
             :mails="mailsToShow"/>
-            <editMail></editMail>
+            <div v-if="edit">  <editMail @closeModal="edit = false"></editMail></div>
+          
 
     </section>
     `,
@@ -23,7 +24,9 @@ export default {
       mails: [],
       filterBy: {
         name: '',
+        draft: false
       },
+      edit: false
     }
   },
   created() {
@@ -40,7 +43,6 @@ export default {
         .then(() => {
           const idx = this.mails.findIndex(mail => mail.id === mailId)
           this.mails.splice(idx, 1)
-          console.log(this.mails.length)
         })
         .catch(err => {
           console.log('OOPS', err)
@@ -49,20 +51,23 @@ export default {
 
     },
     setFilter(filterBy) {
-      this.filterBy = filterBy
-    },
-    removeFromList(mailId) {
-      console.log(mailId)
-      const idx = this.mails.findIndex(mail => mail.id === mailId)
 
-      this.mails.splice(idx, 1)
+      this.filterBy = filterBy
+      console.log(this.filterBy.draft)
+    },
+    checky() {
+      this.edit = false
+      console.log("edit:", this.edit)
     }
   },
   computed: {
     mailsToShow() {
       const regex = new RegExp(this.filterBy.name, 'i')
-      var mails = this.mails.filter(mail => regex.test(mail.name))
-      console.log(this.mails.length)
+      if (this.filterBy.draft) {
+        var mails = this.mails.filter(mail => (regex.test(mail.name) && mail.lable === "draft"))
+        return mails
+      }
+      var mails = this.mails.filter(mail => (regex.test(mail.name) && mail.lable != "draft"))
       return mails
 
     }
