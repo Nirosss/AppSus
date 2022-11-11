@@ -7,8 +7,8 @@ export default {
                 type="text" 
                 placeholder="Search" />
                 <div>Draft Folder
-                <input type="radio" @input="filter" v-model="filterBy.draft"
-                        min="0" max="500" /></div>
+                <input type="checkbox" @input="filter" v-model="filterBy.draft"
+                         /></div>
         </section>
     `,
     data() {

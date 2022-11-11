@@ -28,15 +28,15 @@ export default {
         ></button>
       </div>
     </header>`,
-    data(){
-      return{
-        menuOpen: false,
-      }
-    },
-    methods:{
-      toggleMenu(){
-        this.menuOpen = !this.menuOpen
-        console.log(this.menuOpen)
-      }
+  data() {
+    return {
+      menuOpen: false,
     }
+  },
+  methods: {
+    toggleMenu() {
+      this.menuOpen = !this.menuOpen
+      console.log(this.menuOpen)
+    }
+  }
 }
