@@ -3,13 +3,14 @@ border: solid 1px;
 border-radius: 5px;
 background-color: white;
 z-index: 45;
-margin-top: -10px;
+margin-inline-start: auto;
+margin-inline-end: auto;
+margin-top: -50px;
+max-width: 320px;;
 display: flex;
 align-items: center;
 height: 66px;
-
-margin-inline-start: auto;
-margin-inline-end: auto;
+position: relative;
 }
 .color-picker-buttons {
     padding: 1ren;

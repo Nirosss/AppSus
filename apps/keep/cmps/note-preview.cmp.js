@@ -76,8 +76,8 @@ export default {
   template: `
     <div  @mouseleave="unFocus" v-on:keyup.enter="unFocus">
       <section :style="getColor" class="card"  @mouseover="isHover = true" class="note-preview">
-          <section class="note-content">  
-            <component :is="getType" :note="note" @saveMe='save'></component>
+        <section class="note-content">  
+          <component :is="getType" :note="note" @saveMe='save'></component>
           </section>
           <section v-bind:class="showButtons" class="actions-buttons flex justify-between">
           <router-link :to="'/notes/' + note.id" ><button style="background-image: url('../../../../assets/img/buttons/add20x20.png')" title="Edit"></button></router-link>
@@ -87,16 +87,15 @@ export default {
           <button style="background-image: url('../../../../assets/img/buttons/trash20x20.png')" @click="remove(note.id)" title="Delete"></button>
           </section>
       
-          <section class="edits" onblur="closeEdits">
+        <section class="edits" onblur="closeEdits">
           <input v-if="editUrl" @mouseleave="editUrl = false"
-      type="text" v-model="currNote.info.url" @change="makeType('note-img')"/> 
-      <input v-if="editTodo" v-model="newTodo" @mouseleave="editTodo = false"
-      type="text" @change="addTodo"/> 
-      <div class="color-picker-container"v-if="editColor">
-      <color-picker :note="note" @setColor="changeColor">
-      </div>
-    </section>
-    </section> 
+          type="text" v-model="currNote.info.url" @change="makeType('note-img')"/> 
+          <input v-if="editTodo" v-model="newTodo" @mouseleave="editTodo = false" type="text" @change="addTodo"/> 
+          <div class="color-picker-container"v-if="editColor">
+            <color-picker :note="note" @setColor="changeColor">
+          </div>
+        </section>
+      </section> 
   </div>
       
       `,

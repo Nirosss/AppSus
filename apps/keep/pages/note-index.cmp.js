@@ -21,7 +21,7 @@ export default {
         const idx = this.notes.findIndex((note) => note.id === noteId)
         this.notes.splice(idx, 1)
       })
-      // this.$emit('remove', noteId)
+      
     },
     getNotes() {
       notesService.query().then(notes => this.notes = notes)
