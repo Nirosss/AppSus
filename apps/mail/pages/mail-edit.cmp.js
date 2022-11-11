@@ -15,10 +15,11 @@ export default {
     `,
     data() {
         return {
-            mailToEdit: mailService.getEmptyMail(),
+            // mailToEdit: mailService.getEmptyMail(),
         }
     },
     created() {
+        eventBus.on('followUp', createHistory)
         const mailId = this.$route.params.id
         if (mailId) {
             this.mailToEdit = mailService.get(mailId)
@@ -39,6 +40,9 @@ export default {
                     console.log('OOps:', err)
                     showErrorMsg(`Cannot save mail`)
                 })
+        },
+        createHistory() {
+            console.log("createHistory")
         }
     }
 }

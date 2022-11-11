@@ -36,6 +36,10 @@ const routerOptions = {
       component: mailEdit,
     },
     {
+      path: '/mail/edit/:id',
+      component: mailEdit,
+    },
+    {
       path: '/mail/:id',
       component: mailDetails,
     },
