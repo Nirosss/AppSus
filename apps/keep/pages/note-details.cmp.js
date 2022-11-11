@@ -78,7 +78,7 @@ export default {
       this.note.info.todos[idx].doneAt = Date.now()
     },
     isDone(idx) {
-      return { done: !this.note.info.todos[idx].doneAt }
+      return { done: this.note.info.todos[idx].doneAt != null }
     }
   },
 }

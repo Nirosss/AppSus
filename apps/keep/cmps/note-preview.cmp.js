@@ -34,8 +34,9 @@ const notetodos = {
       <h2>{{ note.info.lable }}</h2>
       <ul class="todos">
 
-        <li v-for="(todo,idx) in note.info.todos" @click="toggleToDo(idx)" :class="isDone(idx)">
-        <input type="text" v-model="note.info.todos[idx].txt" @change="$emit('saveMe')">
+        <li v-for="(todo,idx) in note.info.todos"  :class="isDone(idx)">
+        <input type="textarea" v-model="note.info.todos[idx].txt" @change="$emit('saveMe')">
+        <input type="checkbox" @input='toggleToDo(idx)'>
         </li>
       </ul>
 
@@ -65,7 +66,7 @@ const notetodos = {
       this.note.info.todos[idx].doneAt = Date.now()
     },
     isDone(idx) {
-      return { done: !this.note.info.todos[idx].doneAt }
+      return { done: this.note.info.todos[idx].doneAt != null }
     },
   },
 }
