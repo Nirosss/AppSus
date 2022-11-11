@@ -8,10 +8,16 @@
 
 .todo-input{
   all: unset;
+  
 }
 
 .todo-checkbox{
   
   width: 15px;
   display: inline-block;
+}
+
+.flaggedtext{
+  border-bottom: 1px solid rgba(57, 53, 53, 0.592);
+  border-top: 1px solid rgba(57, 53, 53, 0.592);
 }

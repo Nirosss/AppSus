@@ -33,17 +33,17 @@ const notetodos = {
     <section class="note-todos">
       <h2>{{ note.info.lable }}</h2>
       <ul class="todos clean-list">
-        <li class="todo-phrase" v-for="(todo,idx) in note.info.todos"  :class="isDone(idx)">
+        <li class="todo-phrase" v-for="(todo,idx) in note.info.todos" :class="isDone(idx)">
         <input class="todo-checkbox" type="checkbox" @input='toggleToDo(idx)'>
-        <input class="todo-input" type="textarea" v-model="note.info.todos[idx].txt" @change="$emit('saveMe')">
+        <input class="todo-input" type="textarea" @mouseleave="flaggedtext =null" @focus="isFocused=idx" :class="{'flaggedtext' : isFocused===idx}" v-model="note.info.todos[idx].txt" @change="$emit('saveMe')">
         </li>
       </ul>
-
     </section>
     `,
   data() {
     return {
       todos: [],
+      isFocused: false,
     }
   },
   computed: {
@@ -61,7 +61,8 @@ const notetodos = {
       }
     },
     toggleToDo(idx) {
-      if (this.note.info.todos[idx].doneAt) return this.note.info.todos[idx].doneAt = null
+      if (this.note.info.todos[idx].doneAt)
+        return (this.note.info.todos[idx].doneAt = null)
       this.note.info.todos[idx].doneAt = Date.now()
     },
     isDone(idx) {
@@ -74,7 +75,7 @@ export default {
   props: ['note'],
   template: `
     <div  @mouseleave="unFocus" v-on:keyup.enter="unFocus">
-        <section :style="getColor" class="card"  @mouseover="isHover = true" class="note-preview">
+      <section :style="getColor" class="card"  @mouseover="isHover = true" class="note-preview">
           <section class="note-content">  
             <component :is="getType" :note="note" @saveMe='save'></component>
           </section>
@@ -83,19 +84,16 @@ export default {
           <button  @click.stop="editTodo =! editTodo" style="background-image: url('../../../../assets/img/buttons/todo20x20.png')" title="Add to do list"></button>
           <button @click.stop="editUrl =! editUrl" style="background-image: url('../../../../assets/img/buttons/uploadimg20x20.png')" title="Add Image"></button>
           <button  @click.stop="editColor=true" style="background-image: url('../../../../assets/img/buttons/pallete20x20.png')" title="Change color"></button>
-           <button style="background-image: url('../../../../assets/img/buttons/trash20x20.png')" @click="remove(note.id)" title="Delete"></button>
-        </section>
+          <button style="background-image: url('../../../../assets/img/buttons/trash20x20.png')" @click="remove(note.id)" title="Delete"></button>
+          </section>
       
-    <section class="edits" onblur="closeEdits">
-
-      <input v-if="editUrl" @mouseleave="editUrl = false"
+          <section class="edits" onblur="closeEdits">
+          <input v-if="editUrl" @mouseleave="editUrl = false"
       type="text" v-model="currNote.info.url" @change="makeType('note-img')"/> 
-
       <input v-if="editTodo" v-model="newTodo" @mouseleave="editTodo = false"
       type="text" @change="addTodo"/> 
-
       <div class="color-picker-container"v-if="editColor">
-       <color-picker :note="note" @setColor="changeColor">
+      <color-picker :note="note" @setColor="changeColor">
       </div>
     </section>
     </section> 

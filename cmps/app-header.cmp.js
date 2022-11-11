@@ -8,7 +8,7 @@ export default {
            AppSus
           </h2>
         </section>
-        <nav class="main-nav" @:click="toggleMenu">
+        <nav class="main-nav" @click="toggleMenu">
           <ul class="nav-bar flex clean-list">
           <li><router-link :to="'/notes'" class="flex justify-center align-center">
           Notes
@@ -24,7 +24,7 @@ export default {
         <button 
           type="button"
           class="burger-btn-menu"
-          @:click="toggleMenu"
+          @click="toggleMenu"
         ></button>
       </div>
     </header>`,
