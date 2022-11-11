@@ -72,7 +72,7 @@ export default {
   props: ['note'],
   template: `
     <div  @mouseleave="unFocus" v-on:keyup.enter="unFocus">
-        <section :class="getColor" class="card"  @mouseover="isHover = true" class="note-preview">
+        <section :style="getColor" class="card"  @mouseover="isHover = true" class="note-preview">
           <section class="note-content">  
             <component :is="getType" :note="note"></component>
           </section>
@@ -122,7 +122,7 @@ export default {
       return this.note.info.url
     },
     getColor() {
-      return this.note.color
+      return {'background-color': this.note.color}
     },
   },
   methods: {
@@ -155,6 +155,7 @@ export default {
       console.log(note)
       this.currNote = note
       this.currNote.color = color
+      this.save()
     },
   },
   components: {
