@@ -153,7 +153,6 @@ export default {
       this.makeType('note-todos')
     },
     changeColor(note, color) {
-      console.log(note)
       this.currNote = note
       this.currNote.color = color
       this.save()
