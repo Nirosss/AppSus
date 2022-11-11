@@ -1,7 +1,7 @@
 .card {
-  width: 250px;
+  max-width: 250px;
   box-shadow: 5px 5px 20px hsl(210, 3%, 46%);
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   transition: 0.3s ease;
   text-align: center;
   border-radius: 5px;

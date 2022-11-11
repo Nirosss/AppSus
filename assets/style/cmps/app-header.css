@@ -5,6 +5,15 @@ header {
   width: 100%;
 }
 
+.burger-btn-menu {
+  background-color: none;
+  border-radius: 50px;
+  background-image: url(../../img/buttons/apps80x80.png);
+  background-position: center;
+  border: none;
+}
+
+
 .logo {
   font-size: 40px;
   color: var(--primary-clr-800);

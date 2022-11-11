@@ -1,3 +1,43 @@
 .app-footer {
   margin-top: auto;
+  height: 55px;
+  background-color: var(--primary-clr-800);
+  color: var(--primary-clr-100);
+  width: 100%;
+  justify-content: space-between;
+  padding: 0.5rem;
+  padding-inline-start: 1rem;
+  padding-inline-end: 1rem;
+}
+
+.social-links {
+  gap: 1.25em;
+  
+}
+
+.fa {
+  width: 3rem;
+  padding: 0.875rem;
+  font-size: 0.875rem;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  color: white;
+}
+
+
+.fa.fa-facebook:hover{
+  background: #55acee;
+}
+
+.fa.fa-twitter:hover {
+  background: #55acee;
+}
+
+.fa.fa-dribbble:hover {
+  background: #ee5087;
+}
+
+.fa.fa-linkedin:hover {
+  background: #194363;
 }

@@ -8,6 +8,7 @@ export default {
            AppSus
           </h2>
         </section>
+        <nav class="main-nav" @:click="toggleMenu">
           <ul class="nav-bar flex clean-list">
           <li><router-link :to="'/notes'" class="flex justify-center align-center">
           Notes
@@ -19,6 +20,23 @@ export default {
             <router-link :to="'/about'" class="flex justify-center align-center">About</router-link>
           </li>
         </ul>
+        </nav>
+        <button 
+          type="button"
+          class="burger-btn-menu"
+          @:click="toggleMenu"
+        ></button>
       </div>
     </header>`,
+    data(){
+      return{
+        menuOpen: false,
+      }
+    },
+    methods:{
+      toggleMenu(){
+        this.menuOpen = !this.menuOpen
+        console.log(this.menuOpen)
+      }
+    }
 }

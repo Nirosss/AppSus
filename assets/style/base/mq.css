@@ -1,4 +1,4 @@
-/* MOILE ONLY */
+/* MOBILE ONLY */
 @media (max-width: 640px) {
   header {
     position: fixed;
@@ -29,10 +29,20 @@
     width: 100%;
   }
 }
+.burger-btn-menu {
+  display: block;
+  height: 3.75rem;
+  width: 3.75rem;
+  border-radius: 4rem;
+  border: none;
+  position: absolute;
+  right: 3%;
+}
+
 
 /* SMALL */
 @media (min-width: 640px) {
-  .btn-toggle-menu {
+  .burger-btn-menu {
     display: none;
   }
 }
@@ -43,7 +53,14 @@
         flex-direction: row;
         
     } */
-
+    .burger-btn-menu {
+      display: block;
+      
+      
+      position: absolute;
+      right: 3%;
+    }
+    
   .card .card-img {
     align-self: flex-start;
     flex-basis: 50%;
@@ -71,5 +88,6 @@
   .main-header .nav-bar a {
     height: 130px;
     width: 130px;
+    
   }
 }

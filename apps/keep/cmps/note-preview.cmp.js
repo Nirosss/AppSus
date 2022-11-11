@@ -1,5 +1,6 @@
 import { removeNote } from '../../../services/event-bus.service.js'
 import { notesService } from '../services/note.service.js'
+import colorPicker from '../cmps/color-picker.cmp.js'
 
 const notetxt = {
   props: ['note'],
@@ -72,10 +73,10 @@ export default {
   template: `
     <div  @mouseleave="unFocus" v-on:keyup.enter="unFocus">
         <section :class="getColor" class="card"  @mouseover="isHover = true" class="note-preview">
-        <section class="note-content">  
+          <section class="note-content">  
             <component :is="getType" :note="note"></component>
-        </section>
-        <section v-bind:class="showButtons" class="actions-buttons flex justify-between">
+          </section>
+          <section v-bind:class="showButtons" class="actions-buttons flex justify-between">
           <router-link :to="'/notes/' + note.id" ><button style="background-image: url('../../../../assets/img/buttons/add20x20.png')" title="Edit"></button></router-link>
           <button  @click.stop="editTodo =! editTodo" style="background-image: url('../../../../assets/img/buttons/todo20x20.png')" title="Add to do list"></button>
           <button @click.stop="editUrl =! editUrl" style="background-image: url('../../../../assets/img/buttons/uploadimg20x20.png')" title="Add Image"></button>
@@ -83,7 +84,7 @@ export default {
            <button style="background-image: url('../../../../assets/img/buttons/trash20x20.png')" @click="remove(note.id)" title="Delete"></button>
         </section>
       </section>
-      <section class="edits" onblur="closeEdits">
+    <section class="edits" onblur="closeEdits">
 
       <input v-if="editUrl" @mouseleave="editUrl = false"
       type="text" v-model="currNote.info.url" @change="makeType('note-img')"/> 
@@ -91,10 +92,10 @@ export default {
       <input v-if="editTodo" v-model="newTodo" @mouseleave="editTodo = false"
       type="text" @change="addTodo"/> 
 
-        <div v-if="editColor">
-      <h1 @click="currNote.color='blue'">click me to turn blue</h1>
+      <div v-if="editColor">
+       <color-picker :note="note" @setColor="changeColor">
       </div>
-      </section> 
+    </section> 
       </div>
       
       `,
@@ -104,9 +105,9 @@ export default {
       currNote: this.note,
       noteType: this.getType,
       pageCmps: ['notetxt', 'noteimg'],
-      "editUrl": false,
-      "editColor": false,
-      "editTodo": false,
+      editUrl: false,
+      editColor: false,
+      editTodo: false,
       newTodo: '',
     }
   },
@@ -122,7 +123,7 @@ export default {
     },
     getColor() {
       return this.note.color
-    }
+    },
   },
   methods: {
     remove(noteId) {
@@ -144,17 +145,22 @@ export default {
     },
     addTodo() {
       if (!this.currNote.info.todos) this.currNote.info.todos = []
-      this.currNote.info.todos.push({ "txt": this.newTodo, "doneAt": null })
-
+      this.currNote.info.todos.push({ txt: this.newTodo, doneAt: null })
 
       //not sure if we should have types if you can add images and tdo to same note
       console.log(this.newTodo)
-      this.makeType("note-todos")
+      this.makeType('note-todos')
+    },
+    changeColor(note,color) {
+      console.log(note)
+      this.currNote = note
+      this.currNote.color = color
     },
   },
   components: {
     notetxt,
     noteimg,
     notetodos,
+    colorPicker,
   },
 }
