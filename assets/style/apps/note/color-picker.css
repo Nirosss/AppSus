@@ -23,5 +23,6 @@ margin-inline-end: auto;
   padding: 0;
   width: 26px;
   height: 26px;
- 
-}
+  border: solid 0.5px rgba(185, 181, 181, 0.571);
+ }
+

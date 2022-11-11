@@ -10,6 +10,8 @@ export default {
     <button class="color-picker-button" style="background-color: #d7aefb" class="color-button" @click="changeColor('#d7aefb')"></button>
     <button class="color-picker-button" style="background-color: #fdcfe8" class="color-button" @click="changeColor('#fdcfe8')"></button>
     <button class="color-picker-button" style="background-color: #e8eaed" class="color-button" @click="changeColor('#e8eaed')"></button>
+    <button class="color-picker-button" style="background-color: #e6c9a8" class="color-button" @click="changeColor('#e6c9a8')"></button>
+    <button class="color-picker-button" style="background-color: 'white'" class="color-button" @click="changeColor('white')"></button>
   </section>`,
 
   methods: {
