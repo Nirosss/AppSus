@@ -39,7 +39,7 @@ export default {
   },
   created() {
     this.getNotes()
-    eventBus.on('removeNote',this.removeNote)
+    eventBus.on('removeNote', this.removeNote)
   },
   components: {
     noteList,

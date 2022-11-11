@@ -5,3 +5,7 @@
 .done {
   text-decoration: line-through;
 }
+
+.done input {
+  text-decoration: line-through;
+}

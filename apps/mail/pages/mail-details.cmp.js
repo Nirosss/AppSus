@@ -1,5 +1,5 @@
 import { mailService } from '../services/mail.service.js'
-import { eventBus, removeMail, showUserMsg } from "../../../services/event-bus.service.js"
+import { removeMail, showUserMsg, followUp } from "../../../services/event-bus.service.js"
 
 
 
@@ -45,13 +45,15 @@ export default {
   },
   methods: {
     remove() {
-      removeMail(this.id)
-      showUserMsg({ txt: "mail deleted" })
-      this.$router.go(-1)
+      mailService.remove(this.mail.id)
+        .then(mail => {
+          showUserMsg(`Mail Deleted`)
+          this.$router.push('/mail')
+        })
     },
     reply() {
       this.mail.history = { ...this.mail }
-      console.log(this.mail.history)
+      followUp(this.mail.history)
     }
   }
 }

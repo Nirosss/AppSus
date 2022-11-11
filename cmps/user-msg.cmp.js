@@ -13,6 +13,7 @@ export default {
 	},
 	created() {
 		eventBus.on('show-msg', this.showMsg)
+
 	},
 	methods: {
 		showMsg(msg) {

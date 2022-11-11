@@ -33,10 +33,13 @@ const notetodos = {
     <section class="note-todos">
       <h2>{{ note.info.lable }}</h2>
       <ul class="todos">
-        <li v-for="(todo,idx) in note.info.todos" @click="toggleToDo(idx)"
-        :class="isDone(idx)">{{todo.txt}}  Done: {{this.doneAtDate(idx)}}
+
+        <li v-for="(todo,idx) in note.info.todos"  :class="isDone(idx)">
+        <input type="textarea" v-model="note.info.todos[idx].txt" @change="$emit('saveMe')">
+        <input type="checkbox" @input='toggleToDo(idx)'>
         </li>
       </ul>
+
     </section>
     `,
   data() {
@@ -63,8 +66,8 @@ const notetodos = {
       this.note.info.todos[idx].doneAt = Date.now()
     },
     isDone(idx) {
-      return { done: !this.note.info.todos[idx].doneAt }
-    }
+      return { done: this.note.info.todos[idx].doneAt != null }
+    },
   },
 }
 
@@ -74,7 +77,7 @@ export default {
     <div  @mouseleave="unFocus" v-on:keyup.enter="unFocus">
         <section :style="getColor" class="card"  @mouseover="isHover = true" class="note-preview">
           <section class="note-content">  
-            <component :is="getType" :note="note"></component>
+            <component :is="getType" :note="note" @saveMe='save'></component>
           </section>
           <section v-bind:class="showButtons" class="actions-buttons flex justify-between">
           <router-link :to="'/notes/' + note.id" ><button style="background-image: url('../../../../assets/img/buttons/add20x20.png')" title="Edit"></button></router-link>

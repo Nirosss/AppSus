@@ -6,12 +6,16 @@ export default {
                 v-model="filterBy.name" 
                 type="text" 
                 placeholder="Search" />
+                <div>Draft Folder
+                <input type="radio" @input="filter" v-model="filterBy.draft"
+                        min="0" max="500" /></div>
         </section>
     `,
     data() {
         return {
             filterBy: {
                 name: '',
+                draft: false
             }
         }
     },

@@ -4,7 +4,7 @@ import { eventBus, showErrorMsg, showSuccessMsg } from "../../../services/event-
 export default {
     template: `
         <section class="mail-edit">
-           <header class="flex"><span>New Message</span><span>X</span> </header>
+           <header class="flex"><span>New Message</span><span @click='closeEdit'>X</span> </header>
             <form @submit.prevent="save">
                 <input ref="to" type="text" v-model="mailToEdit.to" class="to"/>
                 <input  type="text" v-model="mailToEdit.subject" class="flex"/>
@@ -15,11 +15,12 @@ export default {
     `,
     data() {
         return {
-            // mailToEdit: mailService.getEmptyMail(),
+            mailToEdit: mailService.getEmptyMail(),
         }
     },
     created() {
-        eventBus.on('followUp', createHistory)
+        eventBus.on('followUp', this.showMsg)
+        // eventBus.on('show-msg', this.showMsg)
         const mailId = this.$route.params.id
         if (mailId) {
             this.mailToEdit = mailService.get(mailId)
@@ -41,8 +42,11 @@ export default {
                     showErrorMsg(`Cannot save mail`)
                 })
         },
-        createHistory() {
-            console.log("createHistory")
+        closeEdit() {
+            this.mailToEdit.lable = "draft";
+            console.log(this.mailToEdit.lable)
+            this.save()
+            this.$emit('closeModal')
         }
     }
 }

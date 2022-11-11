@@ -1,3 +1,4 @@
+import { eventBus } from '../../../services/event-bus.service.js'
 import mailPreview from './mail-preview.cmp.js'
 
 export default {
@@ -20,5 +21,6 @@ export default {
     },
     components: {
         mailPreview,
-    }
+    },
+
 }
