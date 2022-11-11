@@ -41,3 +41,7 @@ export function removeMail(id) {
 export function removeNote(id) {
     eventBus.emit('removeNote', id)
 }
+
+export function followUp(history) {
+    eventBus.emit('followUp', history)
+}
