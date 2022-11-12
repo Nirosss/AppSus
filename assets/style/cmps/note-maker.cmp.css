@@ -16,9 +16,12 @@
 .new-note-input {
   margin-left: 5px;
   width: 400px;
+  height: auto;
+  
   height: 2.5rem;
   font-family: Roboto;
   font-size: 1.2rem;
+  overflow: hidden;
   
 }
 

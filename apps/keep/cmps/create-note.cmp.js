@@ -5,7 +5,7 @@ export default {
   template: `<section>
     <div class="new-note-line-container flex">
         <div class="new-note-txt-container">
-            <input class="new-note-input"  v-model="typedTxt" type="text" v-bind:placeholder="placeHolder"/>
+            <textarea class="new-note-input"  v-model="typedTxt" type="textarea" v-bind:placeholder="placeHolder"/>
         </div>
         <div class="new-note-buttons flex">
         <button class="save-new-note" v-if="typedTxt" @click="createNote">Save</button>
