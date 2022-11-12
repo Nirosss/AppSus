@@ -18,7 +18,6 @@ const notevideo = {
   methods: {},
   computed: {
     videoUrl() {
-      console.log(this.note.info.url)
       return this.note.info.url
     },
   },
@@ -29,7 +28,7 @@ const notetxt = {
   props: ['note'],
   template: `
       <section class="note-txt">
-      <p contenteditable="true">{{ note.info.txt }}</p>
+        <p contenteditable="true">{{ note.info.txt }}</p>
     </section>
     `,
 }
@@ -57,7 +56,7 @@ const notetodos = {
       <h2>{{ note.info.lable }}</h2>
       <ul class="todos clean-list">
         <li class="todo-phrase" v-for="(todo,idx) in note.info.todos" :class="isDone(idx)">
-        <input class="todo-checkbox" type="checkbox" @input='toggleToDo(idx)'>
+        <input class="todo-checkbox" type="checkbox" :checked="this.note.info.todos[idx].doneAt != null" @input='toggleToDo(idx)'>
         <input class="todo-input" type="textarea" @mouseleave="flaggedtext =null" @focus="isFocused=idx" :class="{'flaggedtext' : isFocused===idx}" v-model="note.info.todos[idx].txt" @change="$emit('saveMe')">
         </li>
       </ul>
@@ -98,7 +97,7 @@ export default {
   props: ['note'],
   template: `
     <div  @mouseleave="unFocus" v-on:keyup.enter="unFocus">
-      <section :style="getColor" class="card"  @mouseover="isHover = true" class="note-preview">
+      <section :style="getColor" class="card"  @mouseover="isHover = true">
         <section class="note-content">  
           <component :is="getType" :note="note" @saveMe='save'></component>
           </section>
@@ -111,11 +110,10 @@ export default {
           </section>
       
         <section class="edits" onblur="closeEdits">
-          <input v-if="editUrl" @mouseleave="editUrl = false"
-          type="text" v-model="currNote.info.url" @change="makeType('note-img')"/> 
+          <input v-if="editUrl" @mouseleave="editUrl = false" type="text" v-model="currNote.info.url" @change="makeType('note-img')"/> 
           <input v-if="editTodo" v-model="newTodo" @mouseleave="editTodo = false" type="text" @change="addTodo"/> 
-          <div class="color-picker-container"v-if="editColor">
-            <color-picker :note="note" @setColor="changeColor">
+          <div class="color-picker-container" v-if="editColor">
+            <color-picker :note="note" @setColor="changeColor"/>
           </div>
         </section>
       </section> 
@@ -145,7 +143,8 @@ export default {
       return this.note.info.url
     },
     getColor() {
-      return { 'background-color': this.note.color }
+      if (this.note.style)
+        return { 'background-color': this.note.style.backgroundColor }
     },
   },
   methods: {
@@ -176,7 +175,8 @@ export default {
     },
     changeColor(note, color) {
       this.currNote = note
-      this.currNote.color = color
+      this.currNote.style = {}
+      this.currNote.style.backgroundColor = color
       this.save()
     },
   },

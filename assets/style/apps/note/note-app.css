@@ -50,3 +50,12 @@
   height: 100px;
   width: 250px;
   }
+.note-txt{
+  position: relative;
+}
+.note-liveedit-btn{
+  all: unset;
+  width: 48px;
+  padding: 1rem;
+  margin-top: 25px;
+}

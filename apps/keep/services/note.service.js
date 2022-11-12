@@ -25,6 +25,7 @@ function get(noteId) {
 }
 
 function save(note) {
+  console.log('we got note', note.info.txt)
   if (note.id) {
     return storageService.put(NOTES_KEY, note)
   } else {
@@ -55,7 +56,7 @@ function _createNotes() {
           url: 'https://pyxis.nymag.com/v1/imgs/b43/b2c/4c644da1f8f1d6ecfa62127c29a4622f66-trump-horse.2x.rsocial.w600.jpg',
           title: 'Bobi and Me',
         },
-        style: { backgroundColor: '#00d' },
+        style: { backgroundColor: '#f28b82' },
       },
       {
         id: 'n103',
@@ -70,7 +71,7 @@ function _createNotes() {
           url: 'https://www.youtube.com/embed/xbasufPxHPs',
           title: 'חיית הברזל',
         },
-        style: { backgroundColor: '#00d' },
+        style: { backgroundColor: '#e8eaed' },
       },
       {
         id: 'n105',
@@ -90,7 +91,7 @@ function _createNotes() {
           url: 'https://images.immediate.co.uk/production/volatile/sites/18/2018/12/GettyImages-594833393-11fe4fe.jpg?quality=90&crop=246px,0px,2447px,1630px&fit=700,466',
           title: 'Home is where the grass is',
         },
-        style: { backgroundColor: '#00d' },
+        style: { backgroundColor: '#fbbc04' },
       },
       {
         id: 'n107',
@@ -107,7 +108,7 @@ function _createNotes() {
           url: 'https://ichef.bbci.co.uk/news/976/cpsprodpb/B875/production/_102512274_gettyimages-518360318.jpg',
           title: 'Me',
         },
-        style: { backgroundColor: '#00d' },
+        style: { backgroundColor: '#fdcfe8' },
       },
       {
         id: 'n109',
@@ -116,14 +117,14 @@ function _createNotes() {
           url: 'https://www.youtube.com/embed/pD0HqG24W4k',
           title: 'Best of de andre',
         },
-        style: { backgroundColor: '#00d' },
+        style: { backgroundColor: '#e8eaed' },
       },
       {
         id: 'n110',
         type: 'note-txt',
         isPinned: true,
         info: {
-          txt: 'What is Lorem IpsumLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+          txt: "Dormi sepolto in un campo di grano\nNon è la rosa, non è il tulipano\nChe ti fan veglia dall'ombra dei fossi\nMa son mille papaveri rossi\nLungo le sponde del mio torrente\nVoglio che scendano i lucci argentati\nNon più i cadaveri dei soldati\nPortati in braccio dalla corrente\nCosì dicevi ed era d'inverno\nE come gli altri verso l'inferno\nTe ne vai triste come chi deve\nIl vento ti sputa in faccia la neve\nFermati Piero, fermati adesso\nLascia che il vento ti passi un po' addosso\nDei morti in battaglia ti porti la voce\nChi diede la vita ebbe in cambio una croce\nMa tu non lo udisti e il tempo passava\nCon le stagioni a passo di giava\nEd arrivasti a varcar la frontiera\nIn un bel giorno di primavera\n" ,
         },
       },
       {
@@ -144,7 +145,7 @@ function _createNotes() {
           url: 'https://ichef.bbci.co.uk/news/976/cpsprodpb/15242/production/_109249568_hi057324948.jpg',
           title: '바부 and She',
         },
-        style: { backgroundColor: '#00d' },
+        style: { backgroundColor: '#e6c9a8' },
       },
       {
         id: 'n114',
@@ -153,7 +154,7 @@ function _createNotes() {
           url: 'https://images2.minutemediacdn.com/image/upload/c_fill,w_1440,ar_16:9,f_auto,q_auto,g_auto/shape/cover/sport/649360-gettyimages-1257218804-2dcca7c37b9738aa461ba0e311c25721.jpg',
           title: 'Bobby Mcgee',
         },
-        style: { backgroundColor: '#00d' },
+        style: { backgroundColor: '#d7aefb' },
       },
     ]
     utilService.saveToStorage(NOTES_KEY, notes)
