@@ -63,3 +63,22 @@
 .note-edits > input{
   width: 100%;
 }
+
+.removeToDo-btn{
+  text-decoration: none;
+  all: unset;
+  height: 16px;
+  width: 16px;
+  opacity: 0.5;
+}
+
+.input-area{
+  all: unset;
+  width: 95%;
+  border: none;
+  padding: 10px;
+  min-height: 90px;
+  overflow:hidden;
+  font-size: 16px;
+  resize: none;
+}

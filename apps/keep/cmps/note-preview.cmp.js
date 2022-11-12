@@ -28,9 +28,39 @@ const notetxt = {
   props: ['note'],
   template: `
       <section class="note-txt">
-        <p contenteditable="true">{{ note.info.txt }}</p>
+         
+      <!-- <span class='text' @click="enableEditing">{{value}}</span> -->
+    </div>
+    
+      <textarea type="textarea" v-model="tempValue" class="input-area"></textarea>
+      <!-- <button @click="disableEditing"> Cancel </button>
+      <button @click="saveEdit"> Save </button> -->
+    </div>
+        <!-- <p contenteditable="true">{{ note.info.txt }}</p> -->
     </section>
     `,
+  data() {
+   return {
+     value: this.note.info.txt,
+     tempValue: this.note.info.txt,
+     editing: false,
+   }
+  },
+  methods: {
+    enableEditing: function () {
+      this.tempValue = this.value
+      this.editing = true
+    },
+    disableEditing: function () {
+      this.tempValue = null
+      this.editing = false
+    },
+    saveEdit: function () {
+      // However we want to save it to the database
+      this.value = this.tempValue
+      this.disableEditing()
+    },
+  },
 }
 
 const noteimg = {
@@ -58,7 +88,7 @@ const notetodos = {
         <li class="todo-phrase" v-for="(todo,idx) in note.info.todos" :class="isDone(idx)">
         <input class="todo-checkbox" type="checkbox" :checked="this.note.info.todos[idx].doneAt != null" @input='toggleToDo(idx)'>
         <input class="todo-input" type="textarea" @mouseleave="flaggedtext =null" @focus="isFocused=idx" :class="{'flaggedtext' : isFocused===idx}" v-model="note.info.todos[idx].txt" @change="$emit('saveMe')">
-        </li>
+        <button class="removeToDo-btn"  @click="removeItem(idx)" style="background-image: url('../../../../assets/img/buttons/trash16x16.png')"></button> </li>
       </ul>
     </section>
     `,
@@ -84,16 +114,19 @@ const notetodos = {
     },
     toggleToDo(idx) {
       if (this.note.info.todos[idx].doneAt) {
-      this.note.info.todos[idx].doneAt = null
-      this.$emit('todoitemchange', idx, this.note.info.todos[idx].doneAt)
-      return this.note.info.todos[idx].doneAt
+        this.note.info.todos[idx].doneAt = null
+        this.$emit('todoitemchange', idx, this.note.info.todos[idx].doneAt)
+        return this.note.info.todos[idx].doneAt
       }
       this.note.info.todos[idx].doneAt = Date.now()
-      this.$emit('todoitemchange',idx, this.note.info.todos[idx].doneAt)
+      this.$emit('todoitemchange', idx, this.note.info.todos[idx].doneAt)
     },
     isDone(idx) {
       return { done: this.note.info.todos[idx].doneAt != null }
     },
+    removeItem(idx){
+      this.$emit('removetodo', idx)
+    }
   },
 }
 
@@ -103,7 +136,7 @@ export default {
     <div  @mouseleave="unFocus" v-on:keyup.enter="unFocus">
       <section :style="getColor" class="card"  @mouseover="isHover = true">
         <section class="note-content">  
-          <component :is="getType" :note="note" @saveMe='save' @todoitemchange="updateToDo"></component>
+          <component :is="getType" :note="note" @saveMe='save' @todoitemchange="updateToDo" @removetodo="removeToDo"></component>
           </section>
           <section v-bind:class="showButtons" class="actions-buttons flex justify-between">
           <router-link :to="'/notes/' + note.id" ><button style="background-image: url('../../../../assets/img/buttons/add20x20.png')" title="Edit"></button></router-link>
@@ -185,10 +218,16 @@ export default {
       this.save()
       this.editColor = false
     },
-    updateToDo(idx,doneTime) {
+    updateToDo(idx, doneTime) {
       this.currNote.info.todos[idx].doneAt = doneTime
       this.save()
     },
+    removeToDo(idx) {
+      this.currNote.info.todos.splice(idx,1)
+      if (this.currNote.info.todos.length < 1) {
+      this.remove(this.currNote.id) 
+      } else this.save() 
+    } ,
   },
   components: {
     notetxt,
