@@ -60,10 +60,10 @@ header {
   color: var(--secondary-clr-500) !important;
 }
 
-/* .main-header .nav-bar > *:first-child {
+.main-header .nav-bar > *:first-child {
   border-inline-start: 1px solid var(--primary-clr-900);
 }
 .main-header .nav-bar > * {
   border-inline-end: 1px solid var(--primary-clr-900);
   background-color: var(--primary-clr-800);
-} */
+}
