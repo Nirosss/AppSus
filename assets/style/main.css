@@ -23,4 +23,5 @@
 @import "apps/note/note-app.css";
 
 /* App Components */
-@import "apps/note/color-picker.css"
+@import "apps/note/color-picker.css";
+@import "cmps/note-maker.cmp.css";

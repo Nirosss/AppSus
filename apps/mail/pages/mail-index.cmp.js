@@ -10,7 +10,7 @@ export default {
   template: `
     <section class="mail-app">
         <mail-filter @filter="setFilter"/>
-        <div @click='edit=true'>Compose</div>
+        <button class="new-mail btn" @click='edit=true'>Compose</button>
         <mail-list 
             @remove="removeMail" 
             :mails="mailsToShow"/>

@@ -1,10 +1,12 @@
 import { notesService } from '../services/note.service.js'
 import { eventBus } from '../../../services/event-bus.service.js'
 import noteList from '../cmps/note-list.cmp.js'
+import createNote from '../cmps/create-note.cmp.js'
 
 export default {
   template: `
         <section >
+          <createNote/>
           <note-list :notes="notesToShow" />  
         </section>
     `,
@@ -43,5 +45,6 @@ export default {
   },
   components: {
     noteList,
+    createNote,
   },
 }

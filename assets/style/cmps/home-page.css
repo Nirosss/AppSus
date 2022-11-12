@@ -1,0 +1,27 @@
+.home-img {
+  max-width: 800px;
+  margin-left: 10px;
+  margin-right: 10px;
+    
+}
+.home-page {
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  max-width: 800px;
+  border: 1px solid;
+  flex-direction: column;
+  align-items: center;
+  font-size: 25px;
+  font-family: Roboto;
+  color: black;
+ 
+}
+.home-content {
+  
+  z-index: 200;
+  
+ 
+  font-size: 25px;
+  font-family: Roboto;
+  color: black;
+}

@@ -162,6 +162,7 @@ function _createNotes() {
   return notes
 }
 
-function createNote(){
+function createNote(content,Notetype){
+  
   
 }

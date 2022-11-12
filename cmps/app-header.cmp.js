@@ -3,10 +3,10 @@ export default {
     <header>
       <div class="main-header flex justify-between align-center">
         <section class="logo-container flex justify-between align-center">
-          <img class="logo-img" src="../assets/img/logo50x50.png" alt="logo">
-           <p class="logo">
+          <router-link :to="'/'"><img class="logo-img" src="../assets/img/logo50x50.png" alt="logo"/></router-link>
+          <span class="logo">
            AppSus
-          </p>
+          </span> 
         </section>
         <nav class="main-nav" @click="toggleMenu">
           <ul class="nav-bar flex clean-list">
