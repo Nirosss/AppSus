@@ -5,15 +5,15 @@ export default {
   template: `<section>
     <div class="new-note-line-container flex">
         <div class="new-note-txt-container">
-            <textarea class="new-note-input"  v-model="typedTxt" type="textarea" v-bind:placeholder="placeHolder"/>
+            <textarea auto-grow class="new-note-input" v-model="typedTxt" type="textarea" v-bind:placeholder="placeHolder"/>
         </div>
         <div class="new-note-buttons flex">
         <button class="save-new-note" v-if="typedTxt" @click="createNote">Save</button>
           <div v-if="!typedTxt" class="new-note-btn-container flex">
+            <button @click="setType('txt')" style="background-image: url('../../../../assets/img/buttons/text16x16.png')"  title="Create Text Note"></button>
            <button @click="setType('img')" style="background-image: url('../../../../assets/img/buttons/uploadimg16x16.png')" title="Create Image note"></button>
             <button @click="setType('video')" style="background-image: url('../../../../assets/img/buttons/video16x16.png')" title="Create video note"></button>
-            <button @click="setType('txt')" style="background-image: url('../../../../assets/img/buttons/text16x16.png')"  title="Create Text Note"></button>
-            <button @click="setType('list')" style="background-image: url('../../../../assets/img/buttons/todo20x20.png')" title="Create list note"></button>
+            <button @click="setType('list')" style="background-image: url('../../../../assets/img/buttons/todo16x16.png')" title="Create list note"></button>
          </div>
         </div>
     </div>
@@ -51,9 +51,9 @@ export default {
           this.noteType = 'note-txt'
       }
     },
-    createNote(){
+    createNote() {
       notesService.createNote(this.typedTxt, this.noteType)
       this.typedTxt = null
-    }
+    },
   },
 }
