@@ -67,7 +67,7 @@ export default {
         var mails = this.mails.filter(mail => (regex.test(mail.name) && mail.star))
         return mails
       }
-      var mails = this.mails.filter(mail => (regex.test(mail.name) && mail.label != "draft"))
+      var mails = this.mails.filter(mail => (regex.test(mail.name)))
       if (this.filterBy.folder != 'inbox') {
         console.log(this.filterBy.folder)
         mails = mails.filter(mail => mail.label === this.filterBy.folder)

@@ -45,8 +45,8 @@ export default {
 
         },
         closeEdit() {
-            this.mailToEdit.lable = "draft";
-            console.log(this.mailToEdit.lable)
+            this.mailToEdit.label = "draft";
+            console.log(this.mailToEdit.label)
             this.save()
             this.$emit('closeModal')
         }
