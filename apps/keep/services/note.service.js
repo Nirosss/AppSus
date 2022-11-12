@@ -1,5 +1,6 @@
 import { utilService } from '../../../services/util.service.js'
 import { storageService } from '../../../services/async-storage.service.js'
+import { eventBus } from '../../../services/event-bus.service.js'
 
 const NOTES_KEY = 'notes'
 _createNotes()
@@ -10,6 +11,7 @@ export const notesService = {
   remove,
   save,
   getEmptyNote,
+  createNote
 }
 
 function query() {
@@ -25,7 +27,6 @@ function get(noteId) {
 }
 
 function save(note) {
-  console.log('we got note', note.info.txt)
   if (note.id) {
     return storageService.put(NOTES_KEY, note)
   } else {
@@ -163,6 +164,34 @@ function _createNotes() {
 }
 
 function createNote(content,Notetype){
+  let todo
+  let comingUrl
+  let comingTxt
+  let noteId = utilService.makeId()
   
-  
+  switch(Notetype){
+    case 'note-txt':
+      comingTxt = content
+      break
+    case 'note-img':
+      comingUrl = content
+      break
+    case 'note-todos':
+      todo = content
+      break
+    case 'note-video':
+      comingUrl = content
+  }
+  const newNote = {
+    id: noteId, 
+    type: Notetype, 
+    info: { url:comingUrl || null,
+            txt:comingTxt || null,
+            title:null,
+            label:null,
+            todos:[{txt:todo || null ,doneAt:null}], 
+    style: { backgroundColor: "white" } }
+  }
+  save(newNote)
+  eventBus.emit('addNewNote', newNote)
 }

@@ -8,7 +8,7 @@ export default {
             <input class="new-note-input"  v-model="typedTxt" type="text" v-bind:placeholder="placeHolder"/>
         </div>
         <div class="new-note-buttons flex">
-        <button class="save-new-note" v-if="typedTxt">Save</button>
+        <button class="save-new-note" v-if="typedTxt" @click="createNote">Save</button>
           <div v-if="!typedTxt" class="new-note-btn-container flex">
            <button @click="setType('img')" style="background-image: url('../../../../assets/img/buttons/uploadimg16x16.png')" title="Create Image note"></button>
             <button @click="setType('video')" style="background-image: url('../../../../assets/img/buttons/video16x16.png')" title="Create video note"></button>
@@ -51,5 +51,9 @@ export default {
           this.noteType = 'note-txt'
       }
     },
+    createNote(){
+      notesService.createNote(this.typedTxt, this.noteType)
+      this.typedTxt = null
+    }
   },
 }

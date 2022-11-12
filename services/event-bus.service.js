@@ -45,3 +45,7 @@ export function removeNote(id) {
 export function followUp(history) {
     eventBus.emit('followUp', history)
 }
+
+export function addNewNote(note) {
+    eventBus.emit('addNewNote', note)
+}
