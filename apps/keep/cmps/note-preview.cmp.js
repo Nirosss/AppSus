@@ -27,7 +27,7 @@ const notevideo = {
 const notetxt = {
   props: ['note'],
   template: `
-      <section class="note-txt">
+      <section class="note-txt" @mouseleave="saveEdit">
          
       <!-- <span class='text' @click="enableEditing">{{value}}</span> --> 
      <!-- </div>
@@ -36,15 +36,15 @@ const notetxt = {
        <button @click="disableEditing"> Cancel </button>
       <button @click="saveEdit"> Save </button> 
     </div> -->
-       <p contenteditable="true">{{ note.info.txt }}</p> 
+       <p ref="text" contenteditable="true">{{ note.info.txt }}</p> 
     </section>
     `,
   data() {
-   return {
-     value: this.note.info.txt,
-     tempValue: this.note.info.txt,
-     editing: false,
-   }
+    return {
+      value: this.note.info.txt,
+      tempValue: this.note.info.txt,
+      editing: false,
+    }
   },
   methods: {
     enableEditing: function () {
@@ -57,9 +57,16 @@ const notetxt = {
     },
     saveEdit: function () {
       // However we want to save it to the database
+      console.log(this.$refs.text.innerText)
+      this.note.info.txt = this.$refs.text.innerText
+      console.log("save me")
       this.value = this.tempValue
+      this.$emit('saveMe')
       this.disableEditing()
     },
+    created() {
+      setInterval(this.saveEdit, 500)
+    }
   },
 }
 
@@ -124,7 +131,7 @@ const notetodos = {
     isDone(idx) {
       return { done: this.note.info.todos[idx].doneAt != null }
     },
-    removeItem(idx){
+    removeItem(idx) {
       this.$emit('removetodo', idx)
     }
   },
@@ -223,11 +230,11 @@ export default {
       this.save()
     },
     removeToDo(idx) {
-      this.currNote.info.todos.splice(idx,1)
+      this.currNote.info.todos.splice(idx, 1)
       if (this.currNote.info.todos.length < 1) {
-      this.remove(this.currNote.id) 
-      } else this.save() 
-    } ,
+        this.remove(this.currNote.id)
+      } else this.save()
+    },
   },
   components: {
     notetxt,
