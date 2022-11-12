@@ -13,6 +13,7 @@
   grid-area: side-bar;
 }
 .mail-list {
+  align-self: start;
   grid-area: mail-list;
 }
 .mail-search {
@@ -34,6 +35,7 @@
   width: 250px;
   height: 100%;
   background-color: var(--secondary-clr-500);
+  color: black;
 }
 
 .sidebar li {
@@ -76,6 +78,11 @@
   border-bottom: 1px solid var(--primary-clr-500);
   width: 100%;
   color: black;
+}
+
+.mail-preview img {
+  width: 1em;
+  margin-right: 40px;
 }
 
 .mail-preview:hover {
@@ -160,6 +167,9 @@
   grid-area: marks-container;
   text-align: end;
 }
+.marks-container {
+  all: unset;
+}
 .name-container {
   grid-area: name-container;
   /* width: 168px; */
@@ -178,7 +188,7 @@
 @media (min-width: 640px) {
   .mail-preview {
     display: grid;
-    grid-template-columns: 40px 168px 1fr 50px;
+    grid-template-columns: 40px 130px 1fr 50px;
     grid-template-areas: "marks-container name-container subject-body changeable-container";
     justify-content: start;
     font-size: 14px;

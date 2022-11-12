@@ -24,7 +24,7 @@ export default {
       mails: [],
       filterBy: {
         name: '',
-        draft: false
+        label: "sent"
       },
       edit: false
     }
@@ -61,8 +61,8 @@ export default {
   computed: {
     mailsToShow() {
       const regex = new RegExp(this.filterBy.name, 'i')
-      if (this.filterBy.draft) {
-        var mails = this.mails.filter(mail => (regex.test(mail.name) && mail.label === "draft"))
+      if (this.filterBy.folder === "star") {
+        var mails = this.mails.filter(mail => (regex.test(mail.name) && mail.label === "star"))
         return mails
       }
       var mails = this.mails.filter(mail => (regex.test(mail.name) && mail.label != "draft"))

@@ -8,10 +8,10 @@ export default {
                 placeholder="Search"  />
                 <ul class=" clean-list sidebar">
                <li><div class="side-bar flex flex-column align-start"></li>
+               <li><button @click="setFolder('inbox')"> <img src="../../../../assets/img/buttons/inbox.png">Inbox</button></li>
                <li> <button @click="setFolder('draft')"><img src="../../../../assets/img/buttons/draft.png">  Draft Folder</button></li>
                <li><button @click="setFolder('sent')"> <img src="../../../../assets/img/buttons/sent.png"> Sent Folder</button></li>
-               <li><button @click="setFolder('starred')"> <img src="../../../../assets/img/buttons/star-empty.png">Starred Folder</button></li>
-               <li><button @click="setFolder('inbox')"> <img src="../../../../assets/img/buttons/inbox.png">inbox</button></li>
+               <li><button @click="setFolder('star')"> <img src="../../../../assets/img/buttons/star-empty.png">Starred Folder</button></li>
                 </ul>
 
                

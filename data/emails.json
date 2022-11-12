@@ -4,72 +4,259 @@
         "subject": "Miss you!",
         "body": "Would love to catch up sometimes",
         "isRead": false,
-        "sentAt" : 1551133930594,
+        "sentAt" : 1551993930594,
         "from": "momo@momo.com",
         "name": "Momo",
-        "to": "user@appsus.com"
+        "to": "user@appsus.com",
+        "label": "sent"
         },
     {
         "id": "e102",
         "subject": "Miss you not!",
         "body": "Who are you and how did you get my email?",
         "isRead": true,
-        "sentAt" : 1551133932594,
+        "sentAt" : 1551153932594,
         "to": "lili@momo.com",
         "name": "Me",
         "from": "user@appsus.com",
-        "label": "sent"
+        "label": "sent",
+        "star":true
         },
     {
         "id": "e103",
         "subject": "What?!",
         "body": "I guess this is a wrong address. sincere apologies",
         "isRead": true,
-        "sentAt" : 1551133936594,
+        "sentAt" : 1551183936594,
         "from": "user@appsus.com",
         "name": "Me",
         "to": "lili@momo.com",
-        "label": "sent"
+        "label": "sent",
+        "star":false
         },
     {
         "id": "e104",
         "subject": "Do you want this random item?",
-        "body": "WE've been spying on you for a while, and think you might want to purchase this random item",
+        "body": "We've been spying on you for a while, and think you might want to purchase this random item",
         "isRead": false,
-        "sentAt" : 1551133936594,
+        "sentAt" : 1551733936594,
         "to": "user@appsus.com",
         "name": "Lili",
-        "from": "lili@momo.com"
+        "from": "lili@momo.com",
+        "label": "star",
+        "star":true
         },
     {
         "id": "e105",
         "subject": "And then",
-        "body": "hoadsa asjdoajsdpo alsdaosiap asa9i",
+        "body": "Hello there dude",
         "isRead": false,
-        "sentAt" : 1551133936594,
+        "sentAt" : 15511383936594,
         "to": "user@appsus.com",
         "name": "Lili",
-        "from": "lili@momo.com"
+        "from": "lili@momo.com",
+        "star":false
         },
     {
         "id": "e106",
         "subject": "All and all this is it",
-        "body": "sdfsfsdsaddasdadas sfasdadasda sefsfsdasd sdfasdasd",
+        "body": "I'm typing real words and not lorem ipsum",
         "isRead": false,
         "sentAt" : 1551133966594,
         "to": "user@appsus.com",
         "name": "Bob",
-        "from": "robert@momo.com"
+        "from": "robert@momo.com",
+        "star":false
         },
         {
         "id": "e107",
         "subject": "that's it",
-        "body": "loren aoixa sdc awa",
+        "body": "loren is not how you spell lauren",
         "isRead": true,
         "sentAt" : 1551133966594,
         "to": "user@appsus.com",
         "name": "Bob",
-        "from": "robert@momo.com"
-        }
-
+        "from": "robert@momo.com",
+        "star":false
+        },
+        {
+        "id": "e108",
+        "subject": "Is anyone there?!",
+        "body": "I've been trying to reach out for some time with no luck!",
+        "isRead": true,
+        "sentAt" : 1551143932594,
+        "to": "lilneedy@gmail.com",
+        "name": "Me",
+        "from": "user@appsus.com",
+        "label": "sent"
+        },
+            {
+            "id": "e109",
+            "subject": "Wow this game is amazing!",
+            "body": "Have you tried this game out? I love playing it and I can't stop!",
+            "isRead": true,
+            "sentAt" : 1551133932594,
+            "to": "gamer@momo.com",
+            "name": "Me",
+            "from": "user@appsus.com",
+            "label": "sent"
+            },
+             {
+            "id": "e110",
+            "subject": "Can you believe it?!",
+            "body": "I just won the lottery and I wanted to tell you how!",
+            "isRead": true,
+            "sentAt" : 1551133932594,
+            "to": "friend4ever@momo.com",
+            "name": "Me",
+            "from": "user@appsus.com",
+            "label": "sent"
+            },
+        
+    
+     {
+            "id": "e111",
+            "subject": "Here's a cute pic of my new cat",
+            "body": "Not sure if I told you, but I got a new cat named Luna!" ,
+            "isRead": true,
+            "sentAt" : 1551133932594,
+            "to": "catlover@momo.com",
+            "name": "Me",
+            "from": "user@appsus.com",
+            "label": "sent"
+            },
+        
+    
+     {
+            "id": "e112",
+            "subject": "My newly designed home",
+            "body": "So I decided to take my love for housing to a whole new level!",
+            "isRead": true,
+            "sentAt" : 1551133932594,
+            "to": "fakeaccount@momo.com",
+            "name": "Me",
+            "from": "user@appsus.com",
+            "label": "sent"
+            },
+        
+    
+     {
+            "id": "e113",
+            "subject": "Look who's here!",
+            "body": "I'm coming to visit next week and would love for you to show me around",
+            "isRead": true,
+            "sentAt" : 1551133932594,
+            "to": "oldfriend@momo.com",
+            "name": "Me",
+            "from": "user@appsus.com",
+            "label": "sent"
+            },
+            {
+                "id": "e114",
+                "subject": "Miss you!",
+                "body": "Would love to catch up sometimes",
+                "isRead": false,
+                "sentAt" : 1551133930594,
+                "from": "momo@momo.com",
+                "name": "Momo",
+                "to": "user@appsus.com"
+                },
+            {
+                "id": "e115",
+                "subject": "Miss you not!",
+                "body": "Who are you and how did you get my email?",
+                "isRead": true,
+                "sentAt" : 1551133932594,
+                "to": "lili@momo.com",
+                "name": "Me",
+                "from": "user@appsus.com",
+                "label": "sent"
+                },
+            {
+                "id": "e116",
+                "subject": "What?!",
+                "body": "I guess this is a wrong address. sincere apologies",
+                "isRead": true,
+                "sentAt" : 1551133936594,
+                "from": "user@appsus.com",
+                "name": "Me",
+                "to": "lili@momo.com",
+                "label": "sent"
+                },
+            {
+                "id": "e117",
+                "subject": "Do you want this random item?",
+                "body": "WE've been spying on you for a while, and think you might want to purchase this random item",
+                "isRead": false,
+                "sentAt" : 1551133936594,
+                "to": "user@appsus.com",
+                "name": "Lili",
+                "from": "lili@momo.com"
+                },
+                {
+                    "id": "e118",
+                    "subject": "All and all this is it",
+                    "body": "sdfsfsdsaddasdadas sfasdadasda sefsfsdasd sdfasdasd",
+                    "isRead": false,
+                    "sentAt" : 1551133966594,
+                    "to": "user@appsus.com",
+                    "name": "Bob",
+                    "from": "robert@momo.com"
+                    },
+                    {
+                    "id": "e119",
+                    "subject": "that's it",
+                    "body": "loren aoixa sdc awa",
+                    "isRead": true,
+                    "sentAt" : 1551133966594,
+                    "to": "user@appsus.com",
+                    "name": "Bob",
+                    "from": "robert@momo.com"
+                    },
+                    {
+                    "id": "e120",
+                    "subject": "Is anyone there?!",
+                    "body": "I've been trying to reach out for some time with no luck!",
+                    "isRead": true,
+                    "sentAt" : 1551133932594,
+                    "to": "lilneedy@gmail.com",
+                    "name": "Me",
+                    "from": "user@appsus.com",
+                    "label": "sent"
+                    },
+                        {
+                        "id": "e121",
+                        "subject": "Wow this game is amazing!",
+                        "body": "Have you tried this game out? I love playing it and I can't stop!",
+                        "isRead": true,
+                        "sentAt" : 1551133932594,
+                        "to": "gamer@momo.com",
+                        "name": "Me",
+                        "from": "user@appsus.com",
+                        "label": "sent"
+                        },
+                         {
+                        "id": "e122",
+                        "subject": "Can you believe it?!",
+                        "body": "I just won the lottery and I wanted to tell you how!",
+                        "isRead": true,
+                        "sentAt" : 1551133932594,
+                        "to": "friend4ever@momo.com",
+                        "name": "Me",
+                        "from": "user@appsus.com",
+                        "label": "sent"
+                        },
+                    
+                
+                 {
+                        "id": "e123",
+                        "subject": "Here's a cute pic of my new cat",
+                        "body": "Not sure if I told you, but I got a new cat named Luna!" ,
+                        "isRead": true,
+                        "sentAt" : 1551133932594,
+                        "to": "catlover@momo.com",
+                        "name": "Me",
+                        "from": "user@appsus.com",
+                        "label": "sent"
+                        }
 ]

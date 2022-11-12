@@ -1,10 +1,14 @@
-
+import { mailService } from "../services/mail.service.js";
 export default {
     props: ['mail'],
     template: `
-          <section 
+          
+          <section @click="goToDetails"
           class="mail-preview clickable" v-bind:class="mailStyle" >
-           <div class="marks-container">⭐✡️</div>
+           <button @click.stop="toggleStar" class="marks-container">
+            <img v-if="mail.star" src="../../../../assets/img/buttons/star.png">
+            <img v-if="!mail.star" src="../../../../assets/img/buttons/star-empty.png">
+        </button>
               <div class="name-container">{{ mail.name }} </div>
 
           <div class="subject-body"> <div>{{ mail.subject }} &nbsp </div> <div> {{ mail.body }}
@@ -13,7 +17,7 @@ export default {
              
 
             <div class="changeable-container">{{time}}</div>
-</section>
+</section>      
       `,
     computed: {
         mailStyle() {
@@ -30,6 +34,16 @@ export default {
             var options = { day: "numeric", month: "short" };
             return new Date(this.mail.sentAt).toLocaleDateString("en-US", options);
         }
-
     },
+    methods: {
+        toggleStar() {
+            this.mail.star = true
+            // this.mail.star != this.mail.star
+            console.log(this.mail)
+            mailService.save(this.mail)
+        },
+        goToDetails() {
+            this.$router.push(`/mail/${this.mail.id}`)
+        }
+    }
 }

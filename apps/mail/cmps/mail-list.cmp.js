@@ -7,9 +7,9 @@ export default {
         <section class="mail-list">
             <ul class="clean-list">
                 <li v-for="mail in mails" :key="mail.id">
-                <router-link :to="'/mail/' + mail.id">
+               
                     <mail-preview :mail="mail"/>
-                    </router-link>
+               
 </li>
 </ul>
 </section>
