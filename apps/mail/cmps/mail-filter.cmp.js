@@ -1,24 +1,22 @@
 export default {
     template: `
-        <section class="mail-filter">
-            <input 
+
+            <input class="mail-search center"
                 @input="filter"
                 v-model="filterBy.name" 
                 type="text" 
-                placeholder="Search" />
+                placeholder="Search"  />
+                <ul class=" clean-list sidebar">
+               <li><div class="side-bar flex flex-column align-start"></li>
+               <li> <button @click="setFolder('draft')"><img src="../../../../assets/img/buttons/draft.png">  Draft Folder</button></li>
+               <li><button @click="setFolder('sent')"> <img src="../../../../assets/img/buttons/sent.png"> Sent Folder</button></li>
+               <li><button @click="setFolder('starred')"> <img src="../../../../assets/img/buttons/star-empty.png">Starred Folder</button></li>
+               <li><button @click="setFolder('inbox')"> <img src="../../../../assets/img/buttons/inbox.png">inbox</button></li>
+                </ul>
 
-                <button @click="setFolder('draft')">Draft Folder</button>
-                <button @click="setFolder('sent')">Sent Folder</button>
-                <button @click="setFolder('starred')">Starred Folder</button>
-                <button @click="setFolder('inbox')">Draft inbox</button>
-
-                <div>Draft Folder<input type="checkbox" @input="filter" v-model="filterBy.draft" /></div>
-                <div>Sent Folder<input type="checkbox" @input="filter" v-model="filterBy.sent" /></div>
-                <div>Starred Folder<input type="checkbox" @input="filter" v-model="filterBy.Starred" /></div>
-                <div>inbox<input type="checkbox" @input="filter" v-model="filterBy.inbox" /></div>
+               
                 
                         
-        </section>
     `,
     data() {
         return {
@@ -30,11 +28,11 @@ export default {
     },
     methods: {
         setFolder(searchFolder) {
+            console.log("setFolder")
             this.filterBy.folder = searchFolder
             this.filter()
         },
         filter() {
-            console.log(this.filterBy)
             this.$emit('filter', this.filterBy)
         }
     },

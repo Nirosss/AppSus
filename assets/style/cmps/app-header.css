@@ -1,9 +1,8 @@
 header {
   background-color: var(--primary-clr-800);
   /* box-shadow: inset 0px -6px 0 var(--primary-clr-900); */
-  margin-bottom: 15px;
+  /* margin-bottom: 15px; */
   width: 100%;
-    
 }
 
 .burger-btn-menu {
@@ -16,16 +15,15 @@ header {
   background-repeat: no-repeat;
   border: none;
 }
-.main-header{
-  margin-inline:15px;
+.main-header {
+  margin-inline: 15px;
 }
 
-.logo-img{
+.logo-img {
   margin-right: 0.5rem;
 }
 
-
-.logo{
+.logo {
   font-size: 30px;
   color: var(--primary-clr-800);
   margin: 0;
@@ -36,7 +34,6 @@ header {
 }
 
 .main-header .nav-bar a {
-  
   width: 80px;
   height: 80px;
   color: var(--primary-clr-100);

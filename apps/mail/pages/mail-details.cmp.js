@@ -41,7 +41,10 @@ export default {
     mailService.get(id)
       .then(mail => {
         this.mail = mail
+        this.mail.isRead = true
+        mailService.save(this.mail)
       })
+
   },
   methods: {
     remove() {

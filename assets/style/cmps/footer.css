@@ -8,11 +8,11 @@
   padding: 0.5rem;
   padding-inline-start: 1rem;
   padding-inline-end: 1rem;
+  z-index: 10;
 }
 
 .social-links {
   gap: 1.25em;
-  
 }
 
 .fa {
@@ -25,8 +25,7 @@
   color: white;
 }
 
-
-.fa.fa-facebook:hover{
+.fa.fa-facebook:hover {
   background: #55acee;
 }
 

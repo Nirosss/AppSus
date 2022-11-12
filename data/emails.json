@@ -17,7 +17,8 @@
         "sentAt" : 1551133932594,
         "to": "lili@momo.com",
         "name": "Me",
-        "from": "user@appsus.com"
+        "from": "user@appsus.com",
+        "label": "sent"
         },
     {
         "id": "e103",
@@ -27,7 +28,8 @@
         "sentAt" : 1551133936594,
         "from": "user@appsus.com",
         "name": "Me",
-        "to": "lili@momo.com"
+        "to": "lili@momo.com",
+        "label": "sent"
         },
     {
         "id": "e104",

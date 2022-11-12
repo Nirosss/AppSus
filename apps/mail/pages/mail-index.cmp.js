@@ -10,7 +10,7 @@ export default {
   template: `
     <section class="mail-app">
         <mail-filter @filter="setFilter"/>
-        <button class="new-mail btn" @click='edit=true'>Compose</button>
+        <!-- <button class="new-mail btn" @click='edit=true'>Compose</button> -->
         <mail-list 
             @remove="removeMail" 
             :mails="mailsToShow"/>
@@ -38,7 +38,6 @@ export default {
   },
   methods: {
     removeMail(mailId) {
-      console.log(mailId)
       mailService.remove(mailId)
         .then(() => {
           const idx = this.mails.findIndex(mail => mail.id === mailId)
@@ -57,19 +56,21 @@ export default {
     },
     checky() {
       this.edit = false
-      console.log("edit:", this.edit)
     }
   },
   computed: {
     mailsToShow() {
       const regex = new RegExp(this.filterBy.name, 'i')
       if (this.filterBy.draft) {
-        var mails = this.mails.filter(mail => (regex.test(mail.name) && mail.lable === "draft"))
+        var mails = this.mails.filter(mail => (regex.test(mail.name) && mail.label === "draft"))
         return mails
       }
-      var mails = this.mails.filter(mail => (regex.test(mail.name) && mail.lable != "draft"))
+      var mails = this.mails.filter(mail => (regex.test(mail.name) && mail.label != "draft"))
+      if (this.filterBy.folder != 'inbox') {
+        console.log(this.filterBy.folder)
+        mails = mails.filter(mail => mail.label === this.filterBy.folder)
+      }
       return mails
-
     }
   },
   components: {
