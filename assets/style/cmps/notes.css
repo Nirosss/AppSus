@@ -6,18 +6,16 @@
   text-decoration: line-through;
 }
 
-.todo-input{
+.todo-input {
   all: unset;
-  
 }
 
-.todo-checkbox{
-  
+.todo-checkbox {
   width: 15px;
   display: inline-block;
 }
 
-.flaggedtext{
+.flaggedtext {
   border-bottom: 1px solid rgba(57, 53, 53, 0.592);
   border-top: 1px solid rgba(57, 53, 53, 0.592);
 }

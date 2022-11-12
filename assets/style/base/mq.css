@@ -30,9 +30,10 @@
   }
 }
 .burger-btn-menu {
+  all: unset;
   display: block;
-  height: 3.75rem;
-  width: 3.75rem;
+  height: 3rem;
+  width: 3rem;
   border-radius: 4rem;
   border: none;
   position: absolute;

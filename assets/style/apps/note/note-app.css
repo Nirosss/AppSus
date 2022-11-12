@@ -1,18 +1,15 @@
 .notes {
   min-width: 0;
-  
+
   /* column-count: 6 ; */
-  
 }
 .notes-list {
   column-count: 5;
   column-width: 200px;
   column-gap: 20px;
-  break-inside:avoid-column;
+  break-inside: avoid-column;
   margin-inline-start: 90px;
   margin-inline-end: 90px;
- 
-
 }
 
 .note-preview {
@@ -27,11 +24,11 @@
   visibility: hidden;
 }
 
-.actions-buttons{
-    margin-inline-start: 1.5rem;
-    margin-inline-end: 1.5rem;
-    padding-bottom: 8px;
-    position: relative;
+.actions-buttons {
+  margin-inline-start: 1.5rem;
+  margin-inline-end: 1.5rem;
+  padding-bottom: 8px;
+  position: relative;
 }
 
 .actions-buttons button {
@@ -42,14 +39,13 @@
   background-repeat: no-repeat;
   background-position: center;
   opacity: 0.6;
-  
 }
 
-.actions-buttons button > img{
-    width: 100%;
+.actions-buttons button > img {
+  width: 100%;
 }
 
-.color-picker{
+.color-picker {
   height: 100px;
   width: 250px;
-  }
+}
