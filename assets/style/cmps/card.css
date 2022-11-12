@@ -7,10 +7,10 @@
   flex-direction: column;
   overflow: hidden;
   justify-content: space-between;
-  font-family: Roboto,Arial,sans-serif;
-  letter-spacing: .01428571em;
-  font-family: Roboto,Arial,sans-serif;
-  font-size: .875rem;
+  font-family: Roboto, Arial, sans-serif;
+  letter-spacing: 0.01428571em;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.25rem;
 }
@@ -31,18 +31,28 @@
   text-decoration: none;
 }
 
-.card p{
+.card p {
   margin-top: 8px;
   margin-left: 8px;
   margin-right: 8px;
 }
 
-.card h2{
+.card h2 {
   font-family: Roboto;
   text-align: center;
   margin-top: 5px;
 }
 
-.video-frame{
-width: 100%;
+.video-frame {
+  width: 100%;
+}
+
+.card.active {
+  position: fixed;
+  width: 50%;
+  top: 50%;
+  left: 50%;
+  height: 600px;
+  transform: translate(-50%, -50%);
+  box-shadow: 1px 0px 22px 1px rgba(0, 0, 0, 0.58);
 }

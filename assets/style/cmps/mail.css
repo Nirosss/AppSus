@@ -178,10 +178,16 @@
   padding: 3px;
   bottom: 70px;
   right: 0;
+  transition: 0.3s ease;
 }
 
 .new-mail img {
   width: 2em;
+}
+
+.new-mail:hover {
+  cursor: pointer;
+  margin-left: 16px;
 }
 
 @media (min-width: 640px) {

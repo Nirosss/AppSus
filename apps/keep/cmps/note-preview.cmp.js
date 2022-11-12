@@ -65,7 +65,7 @@ const notetxt = {
       this.disableEditing()
     },
     created() {
-      setInterval(this.saveEdit, 500)
+      this.setInterval(this.saveEdit, 500)
     }
   },
 }
@@ -141,12 +141,12 @@ export default {
   props: ['note'],
   template: `
     <div  @mouseleave="unFocus" v-on:keyup.enter="unFocus">
-      <section :style="getColor" class="card"  @mouseover="isHover = true">
+      <section :style="getColor" class="card" :class=" {active:isActive}"   @mouseover="isHover = true">
         <section class="note-content">  
           <component :is="getType" :note="note" @saveMe='save' @todoitemchange="updateToDo" @removetodo="removeToDo"></component>
           </section>
           <section v-bind:class="showButtons" class="actions-buttons flex justify-between">
-          <router-link :to="'/notes/' + note.id" ><button style="background-image: url('../../../../assets/img/buttons/add20x20.png')" title="Edit"></button></router-link>
+         <button @click="isActive=true" style="background-image: url('../../../../assets/img/buttons/add20x20.png')" title="Edit"></button>
           <button  @click.stop="editTodo =! editTodo" style="background-image: url('../../../../assets/img/buttons/todo20x20.png')" title="Add to do item"></button>
           <button @click.stop="editUrl =! editUrl" style="background-image: url('../../../../assets/img/buttons/uploadimg20x20.png')" title="Add Image"></button>
           <button  @click.stop="editColor=true" style="background-image: url('../../../../assets/img/buttons/pallete20x20.png')" title="Change color"></button>
@@ -174,6 +174,7 @@ export default {
       editColor: false,
       editTodo: false,
       newTodo: '',
+      isActive: false
     }
   },
 
