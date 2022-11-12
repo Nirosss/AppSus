@@ -16,9 +16,8 @@
 .new-note-input {
   margin-left: 5px;
   width: 400px;
-  height: auto;
-  
-  height: 2.5rem;
+  min-height: 2.2rem;
+  resize: vertical;
   font-family: Roboto;
   font-size: 1.2rem;
   overflow: hidden;

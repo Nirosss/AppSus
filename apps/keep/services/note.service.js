@@ -167,7 +167,7 @@ function createNote(content,Notetype){
   let todo
   let comingUrl
   let comingTxt
-  let noteId = utilService.makeId()
+  
   
   switch(Notetype){
     case 'note-txt':
@@ -183,7 +183,7 @@ function createNote(content,Notetype){
       comingUrl = content
   }
   const newNote = {
-    id: noteId, 
+    id: null, 
     type: Notetype, 
     info: { url:comingUrl || null,
             txt:comingTxt || null,

@@ -5,7 +5,7 @@ export default {
   template: `<section>
     <div class="new-note-line-container flex">
         <div class="new-note-txt-container">
-            <textarea class="new-note-input"  v-model="typedTxt" type="textarea" v-bind:placeholder="placeHolder"/>
+            <textarea auto-grow class="new-note-input" v-model="typedTxt" type="textarea" v-bind:placeholder="placeHolder"/>
         </div>
         <div class="new-note-buttons flex">
         <button class="save-new-note" v-if="typedTxt" @click="createNote">Save</button>
@@ -51,9 +51,9 @@ export default {
           this.noteType = 'note-txt'
       }
     },
-    createNote(){
+    createNote() {
       notesService.createNote(this.typedTxt, this.noteType)
       this.typedTxt = null
-    }
+    },
   },
 }
