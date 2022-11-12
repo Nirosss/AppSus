@@ -1,68 +1,9 @@
-.mail-app {
-  margin-top: 0;
-  display: grid;
-  grid-template-columns: 250px 1fr 1fr 1fr;
-  grid-template-rows: 60px 1fr 1fr;
-  gap: 0px 0px;
-  grid-template-areas:
-    "side-bar . mail-search ."
-    "side-bar mail-list mail-list mail-list"
-    "side-bar mail-list mail-list mail-list";
-}
 .side-bar {
   grid-area: side-bar;
 }
 .mail-list {
   align-self: start;
   grid-area: mail-list;
-}
-.mail-search {
-  grid-area: mail-search;
-  width: 100%;
-  max-width: 550px;
-  margin-inline-start: auto;
-  margin-inline-end: auto;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  justify-content: space-between;
-  border: solid 1px;
-  border-radius: 8px;
-}
-
-.sidebar {
-  position: fixed;
-  left: 0;
-  width: 250px;
-  height: 100%;
-  background-color: var(--secondary-clr-500);
-  color: black;
-}
-
-.sidebar li {
-  display: flex;
-  align-items: center;
-}
-
-.sidebar button {
-  all: unset;
-  cursor: pointer;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  display: flex;
-  align-items: center;
-  padding: 40px;
-  transition: 0.3s ease;
-}
-
-.sidebar button:hover {
-  margin-left: 16px;
-}
-
-.sidebar button img {
-  width: 20px;
-  height: 20px;
-  margin-right: 1em;
 }
 
 .mail-list {
@@ -164,12 +105,13 @@
 }
 
 .marks-container {
+  all: unset;
   grid-area: marks-container;
   text-align: end;
+  align-self: end;
+  margin-left: 40px;
 }
-.marks-container {
-  all: unset;
-}
+
 .name-container {
   grid-area: name-container;
   /* width: 168px; */
@@ -185,6 +127,43 @@
   text-align: end;
 }
 
+.mail-search {
+  width: 100%;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  margin-top: 100px;
+  justify-content: space-between;
+  border: solid 1px;
+  border-radius: 8px;
+}
+
+.sidebar {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+
+.sidebar li {
+  display: flex;
+  align-items: center;
+}
+
+.sidebar button {
+  all: unset;
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  display: flex;
+  align-items: center;
+  /* padding: 40px; */
+  transition: 0.3s ease;
+}
+.sidebar button img {
+  width: 20px;
+  height: 20px;
+}
+
 @media (min-width: 640px) {
   .mail-preview {
     display: grid;
@@ -197,7 +176,52 @@
   .subject-body {
     display: flex;
   }
-}
+  .mail-app {
+    margin-top: 0;
+    display: grid;
+    grid-template-columns: 250px 1fr 1fr 1fr;
+    grid-template-rows: 60px 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "side-bar . mail-search ."
+      "side-bar mail-list mail-list mail-list"
+      "side-bar mail-list mail-list mail-list";
+  }
+  .marks-container {
+    margin: 0;
+  }
+  .mail-search {
+    grid-area: mail-search;
+    width: 100%;
+    max-width: 550px;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    justify-content: space-between;
+    border: solid 1px;
+    border-radius: 8px;
+  }
+  .sidebar {
+    margin: 0;
+    display: block;
+    position: fixed;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: var(--secondary-clr-500);
+    color: black;
+    line-height: 80px;
+    font-size: 20px;
+  }
 
-.side-bar {
+  .sidebar button:hover {
+    margin-left: 16px;
+  }
+
+  .sidebar button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 1em;
+  }
 }

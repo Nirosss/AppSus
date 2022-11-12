@@ -62,7 +62,7 @@ export default {
     mailsToShow() {
       const regex = new RegExp(this.filterBy.name, 'i')
       if (this.filterBy.folder === "star") {
-        var mails = this.mails.filter(mail => (regex.test(mail.name) && mail.label === "star"))
+        var mails = this.mails.filter(mail => (regex.test(mail.name) && mail.star))
         return mails
       }
       var mails = this.mails.filter(mail => (regex.test(mail.name) && mail.label != "draft"))
