@@ -167,6 +167,21 @@
 
 .new-mail {
   all: unset;
+  display: flex;
+  align-items: center;
+  background-color: var(--secondary-clr-500);
+  width: 120px;
+  position: fixed;
+  font-size: 20px;
+  border-radius: 10px;
+  color: black;
+  padding: 3px;
+  bottom: 70px;
+  right: 0;
+}
+
+.new-mail img {
+  width: 2em;
 }
 
 @media (min-width: 640px) {
@@ -228,5 +243,8 @@
     width: 20px;
     height: 20px;
     margin-right: 1em;
+  }
+  .new-mail {
+    left: 0;
   }
 }
