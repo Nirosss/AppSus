@@ -37,8 +37,7 @@ export default {
     },
     methods: {
         toggleStar() {
-            this.mail.star = true
-            // this.mail.star != this.mail.star
+            this.mail.star = !this.mail.star
             console.log(this.mail)
             mailService.save(this.mail)
         },
