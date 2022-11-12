@@ -29,14 +29,14 @@ const notetxt = {
   template: `
       <section class="note-txt">
          
-      <!-- <span class='text' @click="enableEditing">{{value}}</span> -->
-    <!-- </div>
+      <!-- <span class='text' @click="enableEditing">{{value}}</span> --> 
+     <!-- </div>
     
       <textarea type="textarea" v-model="tempValue" class="input-area"></textarea>
        <button @click="disableEditing"> Cancel </button>
       <button @click="saveEdit"> Save </button> 
     </div> -->
-        <p contenteditable="true">{{ note.info.txt }}</p> 
+       <p contenteditable="true">{{ note.info.txt }}</p> 
     </section>
     `,
   data() {
