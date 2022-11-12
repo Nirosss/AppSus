@@ -1,3 +1,4 @@
+
 .done {
   text-decoration: line-through;
 }
@@ -18,4 +19,15 @@
 .flaggedtext {
   border-bottom: 1px solid rgba(57, 53, 53, 0.592);
   border-top: 1px solid rgba(57, 53, 53, 0.592);
+}
+
+.removeToDo-btn{
+  all: unset;
+  background-position: center;
+  width: 1em;
+  height: 1em;
+  opacity: 0.5;
+}
+.todos > li{
+margin-bottom: 10px;
 }
