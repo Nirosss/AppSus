@@ -93,6 +93,7 @@
 }
 
 .mail-preview {
+  font-family: Roboto, Arial, sans-serif;
   display: grid;
   grid-template-columns: 1fr 1fr 50px;
   grid-template-areas:
@@ -164,6 +165,10 @@
   height: 20px;
 }
 
+.new-mail {
+  all: unset;
+}
+
 @media (min-width: 640px) {
   .mail-preview {
     display: grid;
@@ -171,7 +176,7 @@
     grid-template-areas: "marks-container name-container subject-body changeable-container";
     justify-content: start;
     font-size: 14px;
-    /* position: relative; */
+    line-height: 40px;
   }
   .subject-body {
     display: flex;
@@ -209,9 +214,9 @@
     left: 0;
     width: 250px;
     height: 100%;
-    background-color: var(--secondary-clr-500);
+    border-right: 2px solid var(--secondary-clr-500);
     color: black;
-    line-height: 80px;
+    line-height: 50px;
     font-size: 20px;
   }
 

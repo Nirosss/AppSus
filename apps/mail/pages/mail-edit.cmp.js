@@ -42,7 +42,7 @@ export default {
                     console.log('OOps:', err)
                     showErrorMsg(`Cannot save mail`)
                 })
-                
+
         },
         closeEdit() {
             this.mailToEdit.lable = "draft";
