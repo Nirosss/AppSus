@@ -8,10 +8,10 @@ export default {
       </section>
       <section class="social-links-container" >
       <ul class="social-links flex clean-list">
-        <li><a href="#" class="fa fa-facebook"></a></li>
-        <li><a href="#" class="fa fa-twitter"></a></li>
-        <li><a href="#" class="fa fa-linkedin"></a></li>
-        <li><a href="#" class="fa fa-dribbble"></a></li>
+        <li><a href="https://www.facebook.com/horsememesforyou" class="fa fa-facebook"></a></li>
+        <li><a href="https://twitter.com/WeirdHorse" class="fa fa-twitter"></a></li>
+        <li><a href="https://www.linkedin.com/search/results/content/?keywords=horse&origin=SWITCH_SEARCH_VERTICAL&sid=JuV" class="fa fa-linkedin"></a></li>
+        <li><a href="https://dribbble.com/search/horse" class="fa fa-dribbble"></a></li>
       </ul>
       </section> 
     </footer>        

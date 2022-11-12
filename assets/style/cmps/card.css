@@ -1,17 +1,23 @@
 .card {
-  max-width: 250px;
-  box-shadow: inset 0px 0px 1px 1px hsl(210deg 3% 46%);
-  margin-bottom: 20px;
+  box-shadow: inset 0px 0px 1px 1px rgba(114, 117, 121, 0.427);
+  color: #202124;
+  margin-bottom: 15px;
   transition: 0.3s ease;
-  text-align: center;
   border-radius: 5px;
   flex-direction: column;
   overflow: hidden;
   justify-content: space-between;
+  font-family: Roboto,Arial,sans-serif;
+  letter-spacing: .01428571em;
+  font-family: Roboto,Arial,sans-serif;
+  font-size: .875rem;
+  font-weight: 400;
+  line-height: 1.25rem;
 }
 
 .card:hover {
   cursor: pointer;
+  box-shadow: inset 0px 0px 1px 1px rgb(74, 75, 76);
 }
 
 .card img {
@@ -29,4 +35,14 @@
   margin-top: 8px;
   margin-left: 8px;
   margin-right: 8px;
+}
+
+.card h2{
+  font-family: Roboto;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.video-frame{
+width: 100%;
 }

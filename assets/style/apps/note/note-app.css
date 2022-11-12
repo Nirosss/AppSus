@@ -1,15 +1,13 @@
 .notes {
   min-width: 0;
-
-  /* column-count: 6 ; */
 }
 .notes-list {
-  column-count: 5;
-  column-width: 200px;
-  column-gap: 20px;
+  column-count: 6;
+  column-width: 238px;
+  column-gap: 15px;
   break-inside: avoid-column;
-  margin-inline-start: 90px;
-  margin-inline-end: 90px;
+  width: min(100% - 25px, 1660px);
+  margin-inline: auto;
 }
 
 .note-preview {

@@ -4,11 +4,11 @@ import { eventBus, showErrorMsg, showSuccessMsg } from "../../../services/event-
 export default {
     template: `
         <section class="mail-edit">
-           <header class="flex"><span>New Message</span><span @click='closeEdit'>X</span> </header>
+           <header class="new-mail-header flex full justify-between"><span>New Message</span><span @click='closeEdit' title="Close">X</span> </header>
             <form @submit.prevent="save">
-                <input ref="to" type="text" v-model="mailToEdit.to" class="to"/>
-                <input  type="text" v-model="mailToEdit.subject" class="flex"/>
-                <textarea  type="text-area" v-model="mailToEdit.body" class="center"></textarea>
+                <input ref="to" type="text" v-model="mailToEdit.to" placeholder="Recipients" class="to"/>
+                <input  type="text" v-model="mailToEdit.subject" class="flex" placeholder="Subject"/>
+                <textarea  type="text-area" v-model="mailToEdit.body" class="center" placeholder="Type your message"></textarea>
                 <button>Send</button>
             </form>
         </section>
@@ -36,11 +36,13 @@ export default {
                 .then(mail => {
                     showSuccessMsg(`Mail saved (Mail id: ${mail.id})`)
                     this.$router.push('/mail')
+                    this.$emit('closeModal')
                 })
                 .catch(err => {
                     console.log('OOps:', err)
                     showErrorMsg(`Cannot save mail`)
                 })
+                
         },
         closeEdit() {
             this.mailToEdit.lable = "draft";

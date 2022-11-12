@@ -1,10 +1,12 @@
 import { notesService } from '../services/note.service.js'
-import { eventBus } from '../../../services/event-bus.service.js'
+import { addNewNote, eventBus } from '../../../services/event-bus.service.js'
 import noteList from '../cmps/note-list.cmp.js'
+import createNote from '../cmps/create-note.cmp.js'
 
 export default {
   template: `
         <section >
+          <createNote @addNote="addNewNote"/>
           <note-list :notes="notesToShow" />  
         </section>
     `,
@@ -21,7 +23,7 @@ export default {
         const idx = this.notes.findIndex((note) => note.id === noteId)
         this.notes.splice(idx, 1)
       })
-      // this.$emit('remove', noteId)
+      
     },
     getNotes() {
       notesService.query().then(notes => this.notes = notes)
@@ -29,6 +31,9 @@ export default {
     filter(filterBy) {
       this.filterBy = filterBy
     },
+    addNewNote(note){
+      this.notes.unshift(note)
+    }
   },
   computed: {
     notesToShow() {
@@ -39,9 +44,11 @@ export default {
   },
   created() {
     this.getNotes()
+    eventBus.on('addNewNote',this.addNewNote)
     eventBus.on('removeNote', this.removeNote)
   },
   components: {
     noteList,
+    createNote,
   },
 }

@@ -1,21 +1,32 @@
 header {
   background-color: var(--primary-clr-800);
   /* box-shadow: inset 0px -6px 0 var(--primary-clr-900); */
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   width: 100%;
+    
 }
 
 .burger-btn-menu {
   background-color: none;
   border-radius: 50px;
-  background-image: url(../../img/buttons/apps80x80.png);
+  height: 40px;
+  width: 40px;
+  background-image: url(../../img/buttons/apps40x40.png);
   background-position: center;
+  background-repeat: no-repeat;
   border: none;
+}
+.main-header{
+  margin-inline:15px;
+}
+
+.logo-img{
+  margin-right: 0.5rem;
 }
 
 
-.logo {
-  font-size: 40px;
+.logo{
+  font-size: 30px;
   color: var(--primary-clr-800);
   margin: 0;
 }
@@ -25,8 +36,9 @@ header {
 }
 
 .main-header .nav-bar a {
-  height: 100px;
-  width: 100px;
+  
+  width: 80px;
+  height: 80px;
   color: var(--primary-clr-100);
   cursor: pointer;
 
@@ -48,10 +60,10 @@ header {
   color: var(--secondary-clr-500) !important;
 }
 
-.main-header .nav-bar > *:first-child {
+/* .main-header .nav-bar > *:first-child {
   border-inline-start: 1px solid var(--primary-clr-900);
 }
 .main-header .nav-bar > * {
   border-inline-end: 1px solid var(--primary-clr-900);
   background-color: var(--primary-clr-800);
-}
+} */
