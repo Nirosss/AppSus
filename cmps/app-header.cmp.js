@@ -2,11 +2,11 @@ export default {
   template: `
     <header>
       <div class="main-header flex justify-between align-center">
-        <section class="logo-container flex align-center">
-          <img src="../assets/img/logo100x100.png" alt="logo">
-           <h2 class="logo">
+        <section class="logo-container flex justify-between align-center">
+          <img class="logo-img" src="../assets/img/logo50x50.png" alt="logo">
+           <p class="logo">
            AppSus
-          </h2>
+          </p>
         </section>
         <nav class="main-nav" @click="toggleMenu">
           <ul class="nav-bar flex clean-list">
@@ -37,6 +37,6 @@ export default {
     toggleMenu() {
       this.menuOpen = !this.menuOpen
       document.querySelector('body').classList.toggle('menu-open')
-    }
-  }
+    },
+  },
 }

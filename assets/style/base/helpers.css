@@ -46,3 +46,7 @@
 .clickable {
   cursor: pointer;
 }
+
+.burger-btn-menu{
+  all:unset
+}

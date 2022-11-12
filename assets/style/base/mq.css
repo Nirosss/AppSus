@@ -5,6 +5,7 @@
     width: 100%;
     box-shadow: none;
     z-index: 1;
+    padding: 15px;
   }
 
   .main-header .nav-bar {
@@ -31,8 +32,8 @@
 }
 .burger-btn-menu {
   display: block;
-  height: 3.75rem;
-  width: 3.75rem;
+  height: 30px;
+  width: 30px;
   border-radius: 4rem;
   border: none;
   position: absolute;

@@ -1,5 +1,5 @@
 .card {
-  box-shadow: inset 0px 0px 1px 1px hsl(210deg 3% 46%);
+  box-shadow: inset 0px 0px 1px 1px rgba(114, 117, 121, 0.427);
   color: #202124;
   margin-bottom: 15px;
   transition: 0.3s ease;
@@ -17,6 +17,7 @@
 
 .card:hover {
   cursor: pointer;
+  box-shadow: inset 0px 0px 1px 1px rgb(74, 75, 76);
 }
 
 .card img {

@@ -161,3 +161,7 @@ function _createNotes() {
   }
   return notes
 }
+
+function createNote(){
+  
+}

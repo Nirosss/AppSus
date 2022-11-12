@@ -37,7 +37,7 @@ const noteimg = {
   props: ['note'],
   template: `
     <section class="note-img">
-      <img :src="imgUrl" alt="">
+      <img :src="imgUrl" alt="" onerror="this.src='../../../../assets/img/imagerror.jpg'">
       <h2>{{ note.info.title }}</h2>
     </section>
     `,
@@ -83,9 +83,13 @@ const notetodos = {
       }
     },
     toggleToDo(idx) {
-      if (this.note.info.todos[idx].doneAt)
-        return (this.note.info.todos[idx].doneAt = null)
+      if (this.note.info.todos[idx].doneAt) {
+      this.note.info.todos[idx].doneAt = null
+      this.$emit('todoitemchange', idx, this.note.info.todos[idx].doneAt)
+      return this.note.info.todos[idx].doneAt
+      }
       this.note.info.todos[idx].doneAt = Date.now()
+      this.$emit('todoitemchange',idx, this.note.info.todos[idx].doneAt)
     },
     isDone(idx) {
       return { done: this.note.info.todos[idx].doneAt != null }
@@ -99,18 +103,18 @@ export default {
     <div  @mouseleave="unFocus" v-on:keyup.enter="unFocus">
       <section :style="getColor" class="card"  @mouseover="isHover = true">
         <section class="note-content">  
-          <component :is="getType" :note="note" @saveMe='save'></component>
+          <component :is="getType" :note="note" @saveMe='save' @todoitemchange="updateToDo"></component>
           </section>
           <section v-bind:class="showButtons" class="actions-buttons flex justify-between">
           <router-link :to="'/notes/' + note.id" ><button style="background-image: url('../../../../assets/img/buttons/add20x20.png')" title="Edit"></button></router-link>
-          <button  @click.stop="editTodo =! editTodo" style="background-image: url('../../../../assets/img/buttons/todo20x20.png')" title="Add to do list"></button>
+          <button  @click.stop="editTodo =! editTodo" style="background-image: url('../../../../assets/img/buttons/todo20x20.png')" title="Add to do item"></button>
           <button @click.stop="editUrl =! editUrl" style="background-image: url('../../../../assets/img/buttons/uploadimg20x20.png')" title="Add Image"></button>
           <button  @click.stop="editColor=true" style="background-image: url('../../../../assets/img/buttons/pallete20x20.png')" title="Change color"></button>
           <button style="background-image: url('../../../../assets/img/buttons/trash20x20.png')" @click="remove(note.id)" title="Delete"></button>
           </section>
       
-        <section class="edits" onblur="closeEdits">
-          <input v-if="editUrl" @mouseleave="editUrl = false" type="text" v-model="currNote.info.url" @change="makeType('note-img')"/> 
+        <section class="note-edits" onblur="closeEdits">
+          <input v-if="editUrl" @mouseleave="editUrl = false" type="text" v-model="currNote.info.url" @change="makeType('note-img')" placehoder="Input image url"/> 
           <input v-if="editTodo" v-model="newTodo" @mouseleave="editTodo = false" type="text" @change="addTodo"/> 
           <div class="color-picker-container" v-if="editColor">
             <color-picker :note="note" @setColor="changeColor"/>
@@ -132,6 +136,7 @@ export default {
       newTodo: '',
     }
   },
+
   computed: {
     showButtons() {
       return { invisible: !this.isHover }
@@ -177,6 +182,11 @@ export default {
       this.currNote = note
       this.currNote.style = {}
       this.currNote.style.backgroundColor = color
+      this.save()
+      this.editColor = false
+    },
+    updateToDo(idx,doneTime) {
+      this.currNote.info.todos[idx].doneAt = doneTime
       this.save()
     },
   },
