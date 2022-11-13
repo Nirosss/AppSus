@@ -27,7 +27,6 @@
 }
 
 .mail-preview:hover {
-  
   outline: 1px solid var(--secondary-clr-500);
 }
 
@@ -53,51 +52,42 @@
 }
 
 .mail-details {
- margin-block-start: 50px;
- margin-inline: 90px;
+  margin-block-start: 50px;
+  margin-inline: 90px;
 }
-.mail-details.title{
+.mail-details.title {
   height: 3rem;
   align-items: center;
   justify-content: space-between;
 }
-.mail-subject{
+.mail-subject {
   font-size: 2rem;
   font-weight: 500;
 }
 
-.detail-mail{
+.detail-mail {
   margin-block-start: 25px;
   font-family: Roboto;
-
 }
 
-.detail-mail.name{
+.detail-mail.name {
   font-weight: bold;
 }
 
 .mail-body-container {
   border: 1px solid rgba(0, 0, 0, 0.033);
   border-radius: 3px;
-  
 }
 
-.mail-details.from-container{
+.mail-details.from-container {
   border-bottom: 1px solid rgba(0, 0, 0, 0.033);
-
 }
-
 
 .mail-details-buttons > button {
   all: unset;
   width: 30px;
   height: 30px;
   margin-right: 10px;
-  
-}
-
-.from-container {
- 
 }
 
 .mail-body-container {
@@ -110,9 +100,9 @@
   display: grid;
   grid-template-columns: 1fr 1fr 50px;
   grid-template-areas:
-    "name-container . changeable-container"
-    "subject-body subject-body ."
-    "subject-body subject-body marks-container";
+    'name-container . changeable-container'
+    'subject-body subject-body .'
+    'subject-body subject-body marks-container';
   justify-content: start;
   font-size: 14px;
   /* position: relative; */
@@ -204,12 +194,11 @@
   margin-left: 16px;
 }
 
-
 @media (min-width: 640px) {
   .mail-preview {
     display: grid;
     grid-template-columns: 40px 130px 1fr 50px;
-    grid-template-areas: "marks-container name-container subject-body changeable-container";
+    grid-template-areas: 'marks-container name-container subject-body changeable-container';
     justify-content: start;
     font-size: 14px;
     line-height: 40px;
@@ -224,9 +213,9 @@
     grid-template-rows: 60px 1fr 1fr;
     gap: 0px 0px;
     grid-template-areas:
-      "side-bar . mail-search ."
-      "side-bar mail-list mail-list mail-list"
-      "side-bar mail-list mail-list mail-list";
+      'side-bar . mail-search .'
+      'side-bar mail-list mail-list mail-list'
+      'side-bar mail-list mail-list mail-list';
   }
   .marks-container {
     margin: 0;

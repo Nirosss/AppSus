@@ -1,27 +1,28 @@
 /* Setup */
-@import "setup/vars.css";
-@import "setup/typography.css";
+@import 'setup/vars.css';
+@import 'setup/typography.css';
 
 /* Base */
-@import "base/base.css";
-@import "base/helpers.css";
+@import 'base/base.css';
+@import 'base/helpers.css';
 /* @import "base/layout.css"; */
-@import "base/forms.css";
-@import "base/mq.css";
+@import 'base/forms.css';
+@import 'base/mq.css';
 
 /* General Components */
-@import "cmps/home-page.css";
-@import "cmps/app-header.css";
-@import "cmps/footer.css";
-@import "cmps/user-msg.css";
-@import "cmps/card.css";
-@import "cmps/mail.css";
-@import "cmps/notes.css";
+@import 'cmps/home-page.css';
+@import 'cmps/about-page.css'; 
+@import 'cmps/app-header.css';
+@import 'cmps/footer.css';
+@import 'cmps/user-msg.css';
+@import 'cmps/card.css';
+@import 'cmps/mail.css';
+@import 'cmps/notes.css';
 
 /* Apps */
-@import "apps/mail/email-app.css";
-@import "apps/note/note-app.css";
+@import 'apps/mail/email-app.css';
+@import 'apps/note/note-app.css';
 
 /* App Components */
-@import "apps/note/color-picker.css";
-@import "cmps/note-maker.cmp.css";
+@import 'apps/note/color-picker.css';
+@import 'cmps/note-maker.cmp.css';

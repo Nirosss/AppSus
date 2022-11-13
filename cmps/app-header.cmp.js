@@ -3,7 +3,7 @@ export default {
     <header>
       <div class="main-header flex justify-between align-center">
         <section class="logo-container flex justify-between align-center">
-          <router-link :to="'/'"><img class="logo-img" src="/assets/img/logo50x50.png" alt="logo"/></router-link>
+          <router-link :to="'/'"><img class="logo-img" src="assets/img/logo50x50.png" alt="logo"/></router-link>
           <span class="logo">
            AppSus
           </span> 

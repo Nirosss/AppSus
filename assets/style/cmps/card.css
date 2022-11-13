@@ -55,4 +55,5 @@
   height: 600px;
   transform: translate(-50%, -50%);
   box-shadow: 1px 0px 22px 1px rgba(0, 0, 0, 0.58);
+  z-index: 2000;
 }

@@ -28,15 +28,7 @@ const notetxt = {
   props: ['note'],
   template: `
       <section class="note-txt" @mouseleave="saveEdit">
-         
-      <!-- <span class='text' @click="enableEditing">{{value}}</span> --> 
-     <!-- </div>
-    
-      <textarea type="textarea" v-model="tempValue" class="input-area"></textarea>
-       <button @click="disableEditing"> Cancel </button>
-      <button @click="saveEdit"> Save </button> 
-    </div> -->
-       <p ref="text" contenteditable="true">{{ note.info.txt }}</p> 
+        <p ref="text" contenteditable="true">{{ note.info.txt }}</p> 
     </section>
     `,
   data() {
