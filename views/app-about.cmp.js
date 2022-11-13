@@ -6,8 +6,8 @@ export default {
             <img class="about-pony" src="assets/img/Pony.svg" alt="">
             <pre class="about-content"> 
                 We at SusApps are devoted to our cutomers.
-                We promis to waste your time and money in 
-                the most sufficent way we can. 
+                We promise to waste your time and money in 
+                the most efficent ways we can. 
                 Why pay technology giants? 
                 Our juniors can make any app you want
                 in Just 3 days. 
