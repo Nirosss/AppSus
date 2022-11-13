@@ -47,7 +47,7 @@
   width: 100%;
 }
 
-.card.active {
+/* .card.active {
   position: fixed;
   width: 50%;
   top: 50%;
@@ -57,3 +57,7 @@
   box-shadow: 1px 0px 22px 1px rgba(0, 0, 0, 0.58);
   z-index: 2000;
 }
+
+.card.active img {
+  height: 100%;
+} */
