@@ -5,10 +5,10 @@ export default {
     template: `
         <section class="mail-edit">
            <header class="new-mail-header flex full justify-between"><span>New Message</span><span @click='closeEdit' title="Close">X</span> </header>
-            <form @submit.prevent="save">
+            <form class="new-mail-form" @submit.prevent="save">
                 <input ref="to" type="text" v-model="mailToEdit.to" placeholder="Recipients" class="to"/>
                 <input  type="text" v-model="mailToEdit.subject" class="flex" placeholder="Subject"/>
-                <textarea  type="text-area" v-model="mailToEdit.body" class="center" placeholder="Type your message"></textarea>
+                <textarea  type="text-area" v-model="mailToEdit.body" class="new-mail-textarea center" placeholder="Type your message"></textarea>
                 <button>Send</button>
             </form>
         </section>

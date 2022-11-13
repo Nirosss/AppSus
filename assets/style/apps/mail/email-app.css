@@ -21,7 +21,9 @@
 .mail-edit header > *{
     margin-inline:8px;
 }
-
+.new-mail-form > input {
+  width: 99%;
+}
 .to::after {
   content: '--';
 }
@@ -55,3 +57,4 @@ textarea:focus,
 input:focus {
   outline: none;
 }
+

@@ -74,7 +74,7 @@ const noteimg = {
   props: ['note'],
   template: `
     <section class="note-img">
-      <img :src="imgUrl" alt="" onerror="this.src='../../../../assets/img/imagerror.jpg'">
+      <img :src="imgUrl" alt="" onerror="this.src='assets/img/imagerror.jpg'">
       <h2>{{ note.info.title }}</h2>
     </section>
     `,
@@ -95,7 +95,7 @@ const notetodos = {
         <li class="todo-phrase" v-for="(todo,idx) in note.info.todos" :class="isDone(idx)">
         <input class="todo-checkbox" type="checkbox" :checked="this.note.info.todos[idx].doneAt != null" @input='toggleToDo(idx)'>
         <input class="todo-input" type="textarea" @mouseleave="flaggedtext =null" @focus="isFocused=idx" :class="{'flaggedtext' : isFocused===idx}" v-model="note.info.todos[idx].txt" @change="$emit('saveMe')">
-        <button class="removeToDo-btn"  @click="removeItem(idx)" style="background-image: url('../../../../assets/img/buttons/trash16x16.png')"></button> </li>
+        <button class="removeToDo-btn"  @click="removeItem(idx)" style="background-image: url('assets/img/buttons/trash16x16.png')"></button> </li>
       </ul>
     </section>
     `,
@@ -146,11 +146,11 @@ export default {
           <component :is="getType" :note="note" @saveMe='save' @todoitemchange="updateToDo" @removetodo="removeToDo"></component>
           </section>
           <section v-bind:class="showButtons" class="actions-buttons flex justify-between">
-         <button @click="isActive=true" style="background-image: url('../../../../assets/img/buttons/add20x20.png')" title="Edit"></button>
-          <button  @click.stop="editTodo =! editTodo" style="background-image: url('../../../../assets/img/buttons/todo20x20.png')" title="Add to do item"></button>
-          <button @click.stop="editUrl =! editUrl" style="background-image: url('../../../../assets/img/buttons/uploadimg20x20.png')" title="Add Image"></button>
-          <button  @click.stop="editColor=true" style="background-image: url('../../../../assets/img/buttons/pallete20x20.png')" title="Change color"></button>
-          <button style="background-image: url('../../../../assets/img/buttons/trash20x20.png')" @click="remove(note.id)" title="Delete"></button>
+         <button @click="isActive=true" style="background-image: url('assets/img/buttons/add20x20.png')" title="Edit"></button>
+          <button  @click.stop="editTodo =! editTodo" style="background-image: url('assets/img/buttons/todo20x20.png')" title="Add to do item"></button>
+          <button @click.stop="editUrl =! editUrl" style="background-image: url('assets/img/buttons/uploadimg20x20.png')" title="Add Image"></button>
+          <button  @click.stop="editColor=true" style="background-image: url('assets/img/buttons/pallete20x20.png')" title="Change color"></button>
+          <button style="background-image: url('assets/img/buttons/trash20x20.png')" @click="remove(note.id)" title="Delete"></button>
           </section>
       
         <section class="note-edits" onblur="closeEdits">

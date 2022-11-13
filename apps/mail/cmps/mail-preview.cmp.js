@@ -6,9 +6,9 @@ export default {
           <section @click="goToDetails"
           class="mail-preview clickable" v-bind:class="mailStyle" >
            <button @click.stop="toggleStar" class="marks-container">
-            <img v-if="mail.star" src="../../../../assets/img/buttons/star.png">
-            <img v-if="!mail.star" src="../../../../assets/img/buttons/star-empty.png">
-        </button>
+            <img v-if="mail.star" src="assets/img/buttons/star.png">
+            <img v-if="!mail.star" src="assets/img/buttons/star-empty.png">
+           </button>
               <div class="name-container">{{ mail.name }} </div>
 
           <div class="subject-body"> <div>{{ mail.subject }} &nbsp </div> <div> {{ mail.body }}

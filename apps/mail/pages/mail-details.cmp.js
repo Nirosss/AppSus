@@ -6,57 +6,51 @@ import { removeMail, showUserMsg, followUp } from "../../../services/event-bus.s
 
 
 export default {
-  template: `<section v-if="mail" class=" mail-details">
-    <h1 class="subject-container">{{mail.subject}}</h1>
-
-      <div class="buttons-container">
-        
-      <button @click="$router.go(-1)">	
-        <img src="assets/img/back.png" alt="Delete">
-
-      </button>
-
-        <button @click="remove()">	
-      	<img src="assets/img/trash.png" alt="Delete">
-      </button> 
-     
+  template: `<section v-if="mail" class="mail-details">
+    <section class="mail-details title flex ">   
+    <h1 class="mail-subject">{{mail.subject}}</h1>
+    <div class="mail-details buttons">
+      <button style="background-image: url('assets/img/back.png')" @click="$router.go(-1)">	
+         </button>
+         <button style="background-image: url('assets/img/buttons/trash.png') "@click="remove()"> </button> 
+      </div>
+    </section> 
+    
+    <div class="from-container flex">
+    <span class="detail-mail name">{{mail.name}}</span>
+    <span class="detail-mail from">&lt{{mail.from}}&gt</span>
     </div>
-
-      <div class="from-container flex">
-    <h1 class="detail-mail name">{{mail.name}}</h1>
-    <h1 class="detail-mail from"><{{mail.from}}></h1>
-</div>
-    <pre class= "mail-body-container">{{mail.body}}</pre>
-    <button @click="reply">Reply</button>
-  </section>`,
+    <div class= "mail-body-container">
+    <pre class= "mail-body">{{mail.body}}</pre>
+    </div>
+    
+  </section>
+  `,
   data() {
     return {
       mail: null,
-      id: null
+      id: null,
     }
   },
   created() {
     const { id } = this.$route.params
     this.id = id
-    mailService.get(id)
-      .then(mail => {
-        this.mail = mail
-        this.mail.isRead = true
-        mailService.save(this.mail)
-      })
-
+    mailService.get(id).then((mail) => {
+      this.mail = mail
+      this.mail.isRead = true
+      mailService.save(this.mail)
+    })
   },
   methods: {
     remove() {
-      mailService.remove(this.mail.id)
-        .then(mail => {
-          showUserMsg(`Mail Deleted`)
-          this.$router.push('/mail')
-        })
+      mailService.remove(this.mail.id).then((mail) => {
+        showUserMsg(`Mail Deleted`)
+        this.$router.push('/mail')
+      })
     },
     reply() {
       this.mail.history = { ...this.mail }
       followUp(this.mail.history)
-    }
-  }
+    },
+  },
 }
