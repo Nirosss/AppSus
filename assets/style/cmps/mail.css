@@ -62,31 +62,38 @@
   justify-content: space-between;
 }
 .mail-subject{
-  font-size: 1.5rem;
+  font-size: 2rem;
+  font-weight: 500;
 }
-
-
 
 .detail-mail{
   margin-block-start: 25px;
   font-family: Roboto;
-  
+
 }
 
 .detail-mail.name{
   font-weight: bold;
 }
 
-.subject-container {
+.mail-body-container {
+  border: 1px solid rgba(0, 0, 0, 0.033);
+  border-radius: 3px;
   
 }
 
+.mail-details.from-container{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.033);
+
+}
 
 
-.buttons-container > button {
-  width: 20px;
-  background-color: unset;
-  border: none;
+.mail-details-buttons > button {
+  all: unset;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  
 }
 
 .from-container {
