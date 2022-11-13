@@ -63,7 +63,7 @@ function _createNotes() {
         id: 'n103',
         type: 'note-txt',
         isPinned: true,
-        info: { txt: 'Fullstack Me Baby!' },
+        info: { txt: 'Git it on' },
       },
       {
         id: 'n104',
@@ -80,8 +80,8 @@ function _createNotes() {
         info: {
           label: 'Get my stuff together',
           todos: [
-            { txt: 'Driving liscence', doneAt: null },
-            { txt: 'Coding power', doneAt: 187111111 },
+            { txt: 'Coding liscence', doneAt: null },
+            { txt: 'Clean the barn', doneAt: 187111111 },
           ],
         },
       },
@@ -135,7 +135,7 @@ function _createNotes() {
           label: 'Get my stuff together',
           todos: [
             { txt: 'Finish This Sprint', doneAt: 1995111111 },
-            { txt: 'Coding powder', doneAt: 187111111 },
+            { txt: 'Galloping license', doneAt: 187111111 },
           ],
         },
       },
